@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useRef } from "react";
 import Slider from "react-slick";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import colorfulBusiness from "./images/colorful-business.jpg";
 import saveMoney from "./images/concept-save-money.jpg";
 import saveFromPhone from "./images/saving_from_phone.jpg";
@@ -15,8 +15,8 @@ function Arrow(props) {
         position: "absolute",
         top: "50%",
         [type]: "2%",
-        width: "50px",
-        height: "50px",
+        width: "30px", // Reduced size for mobile
+        height: "30px", // Reduced size for mobile
         backgroundColor: "black",
         color: "white",
         display: isHovering ? "flex" : "none",
@@ -43,7 +43,7 @@ function FullScreenSlider() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     arrows: false,
     adaptiveHeight: true,
   };
@@ -67,7 +67,7 @@ function FullScreenSlider() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-red-500 to-yellow-500 opacity-50"></div>
           <motion.h1
-            className="absolute inset-0 flex items-center justify-center text-4xl text-white font-bold"
+            className="absolute inset-0 flex items-center justify-center text-center text-xl md:text-4xl text-white font-bold max-w-3xl mx-auto"
             initial={{ y: "-100vh" }}
             animate={{ y: 0 }}
             exit={{ y: "100vh" }}
@@ -76,6 +76,7 @@ function FullScreenSlider() {
             Μετατροπή των αριθμών σε γνώση: Η αποταμίευσή σας οπτικοποιημένη.
           </motion.h1>
         </div>
+
         <div className="h-screen relative">
           <motion.img
             src={saveMoney}
@@ -88,7 +89,7 @@ function FullScreenSlider() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 opacity-50"></div>
           <motion.h1
-            className="absolute inset-0 flex items-center justify-center text-4xl text-white font-bold"
+            className="absolute inset-0 flex items-center justify-center text-center text-xl md:text-4xl text-white font-bold max-w-3xl mx-auto"
             initial={{ y: "-100vh" }}
             animate={{ y: 0 }}
             exit={{ y: "100vh" }}
@@ -97,6 +98,7 @@ function FullScreenSlider() {
             Επενδύστε στο μέλλον σας: Ξεκινήστε την αποταμίευση τώρα!
           </motion.h1>
         </div>
+
         <div className="h-screen relative">
           <motion.img
             src={saveFromPhone}
@@ -109,13 +111,13 @@ function FullScreenSlider() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 opacity-50"></div>
           <motion.h1
-            className="absolute inset-0 flex items-center justify-center text-4xl text-white font-bold"
+            className="absolute inset-0 flex items-center justify-center text-center text-xl md:text-4xl text-white font-bold max-w-3xl mx-auto"
             initial={{ y: "-100vh" }}
             animate={{ y: 0 }}
             exit={{ y: "100vh" }}
             transition={{ duration: 0.5 }}
           >
-            Smart Phone , εξυπνότερη αποταμίευση : Το τηλέφωνο σας γίνεται ο
+            Smart Phone, εξυπνότερη αποταμίευση: Το τηλέφωνο σας γίνεται ο
             κουμπαράς σας.
           </motion.h1>
         </div>

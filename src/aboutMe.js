@@ -1,15 +1,16 @@
 import React from "react";
+import "./index.css";
 
 function AboutMe() {
   return (
-    <div className="font-poppins text-sm leading-[30px] font-normal text-customColor mx-auto max-w-[1300px]">
+    <div className="mobile-center font-poppins text-xs leading-6 font-normal text-customColor mx-4 sm:mx-auto max-w-[1300px]">
       <h2
         id="about-me"
-        className="pb-0 text-3xl leading-none m-0 mb-4 pt-0 font-semibold text-custom-new-blue"
+        className="text-center sm:text-left pb-0 text-2xl sm:text-3xl leading-tight m-0 mb-4 pt-0 font-semibold text-custom-new-blue"
       >
         ΙΣΤΟΡΙΚΟ
       </h2>
-      <p className="text-white ">
+      <p className="text-dark text-center sm:text-left sm:text-justify">
         Το Ταμείο Επαγγελματικής Ασφάλισης Αστυνομικών Πυροσβεστών Λιμενικών
         (Τ.Ε.Α.Α.Π.Λ.) είναι αυτοδιαχειριζόμενο, Νομικό Πρόσωπο Ιδιωτικού
         Δικαίου μη κερδοσκοπικού χαρακτήρα, που συστάθηκε τον Σεπτέμβριο του
@@ -21,21 +22,21 @@ function AboutMe() {
       </p>
       <br />
 
-      <div className="">
+      <div className="mt-4 text-center sm:text-left">
         <a
           href="#"
-          className="inline-block text-white border-2 border-blue-700 text-center px-10 py-3 cursor-pointer align-middle no-underline rounded-full transition-all duration-200 ease-linear text-sm hover:bg-blue-700"
+          className="inline-block text-dark border-2 border-blue-700 text-center px-6 py-2 cursor-pointer align-middle no-underline rounded-full transition-all duration-200 ease-linear text-xs hover:bg-custom-new-blue"
         >
           Ιστορικό
         </a>
       </div>
       <h2
         id="about-me"
-        className=" mt-16 pb-0 text-3xl leading-none m-0 mb-4 pt-0 text-custom-new-blue font-semibold"
+        className="text-center sm:text-left mt-8 sm:mt-16 pb-0 text-2xl sm:text-3xl leading-none m-0 mb-4 pt-0 text-custom-new-blue font-semibold"
       >
         ΣΚΟΠΟΣ
       </h2>
-      <p className="text-white ">
+      <p className="text-dark text-center sm:text-left">
         Εποπτεύεται από το Υπουργείο Απασχόλησης και Κοινωνικής Προστασίας, την
         Εθνική Αναλογιστική Αρχή και την Επιτροπή Κεφαλαιαγοράς. Λειτουργεί
         συμπληρωματικά στην υποχρεωτική ασφάλιση και αποτελείται από δύο
@@ -47,10 +48,10 @@ function AboutMe() {
       </p>
       <br />
 
-      <div className="">
+      <div className="mt-4 text-center sm:text-left">
         <a
           href="#"
-          className="inline-block text-white border-2 border-blue-700 text-center px-10 py-3 cursor-pointer align-middle no-underline rounded-full transition-all duration-200 ease-linear text-sm hover:bg-blue-700"
+          className="inline-block text-dark border-2 border-blue-700 text-center px-6 py-2 cursor-pointer align-middle no-underline rounded-full transition-all duration-200 ease-linear text-xs hover:bg-custom-new-blue"
         >
           Σκοπός
         </a>
@@ -58,5 +59,4 @@ function AboutMe() {
     </div>
   );
 }
-
 export default AboutMe;
