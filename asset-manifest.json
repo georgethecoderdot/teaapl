@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/teaapl/static/css/main.0c98341f.css",
-    "main.js": "/teaapl/static/js/main.a7e71f39.js",
+    "main.css": "/teaapl/static/css/main.65eee40b.css",
+    "main.js": "/teaapl/static/js/main.03eb55e6.js",
     "static/js/787.94f13d48.chunk.js": "/teaapl/static/js/787.94f13d48.chunk.js",
     "static/media/concept-save-money.jpg": "/teaapl/static/media/concept-save-money.3a8f2de985fd69992724.jpg",
     "static/media/saving_from_phone.jpg": "/teaapl/static/media/saving_from_phone.1b8751ee9e5c809e92c6.jpg",
@@ -18,12 +18,12 @@
     "static/media/slick.ttf": "/teaapl/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/teaapl/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/teaapl/index.html",
-    "main.0c98341f.css.map": "/teaapl/static/css/main.0c98341f.css.map",
-    "main.a7e71f39.js.map": "/teaapl/static/js/main.a7e71f39.js.map",
+    "main.65eee40b.css.map": "/teaapl/static/css/main.65eee40b.css.map",
+    "main.03eb55e6.js.map": "/teaapl/static/js/main.03eb55e6.js.map",
     "787.94f13d48.chunk.js.map": "/teaapl/static/js/787.94f13d48.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c98341f.css",
-    "static/js/main.a7e71f39.js"
+    "static/css/main.65eee40b.css",
+    "static/js/main.03eb55e6.js"
   ]
 }
