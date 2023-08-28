@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import search from "./images/search.gif";
+import search from "../images/search.gif";
 
 function SearchIcon() {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,6 +1,6 @@
 import React from "react";
 import Tooltip from "./Toolip";
-import earth from "./images/earth.gif";
+import earth from "../images/earth.gif";
 
 function LocationIcon() {
   return (

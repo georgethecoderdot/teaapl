@@ -1,6 +1,6 @@
 import React from "react";
 import Tooltip from "./Toolip";
-import phone from "./images/phone.gif";
+import phone from "../images/phone.gif";
 
 function PhoneIcon() {
   return (

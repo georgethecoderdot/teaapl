@@ -2,9 +2,9 @@ import React from "react";
 import { useState, useRef } from "react";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
-import colorfulBusiness from "./images/colorful-business.jpg";
-import saveMoney from "./images/concept-save-money.jpg";
-import saveFromPhone from "./images/saving_from_phone.jpg";
+import colorfulBusiness from "../images/colorful-business.jpg";
+import saveMoney from "../images/concept-save-money.jpg";
+import saveFromPhone from "../images/saving_from_phone.jpg";
 
 function Arrow(props) {
   const { onClick, type, isHovering } = props;
@@ -15,8 +15,8 @@ function Arrow(props) {
         position: "absolute",
         top: "50%",
         [type]: "2%",
-        width: "30px", // Reduced size for mobile
-        height: "30px", // Reduced size for mobile
+        width: "30px", //  for mobile
+        height: "30px", //  for mobile
         backgroundColor: "black",
         color: "white",
         display: isHovering ? "flex" : "none",

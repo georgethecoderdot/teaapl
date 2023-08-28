@@ -35,7 +35,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="bg-[#071923] text-white py-6 font-poppins">
+    <div className="bg-[#071923] text-white py-6 font-poppins w-full">
       {/* Useful Links Section */}
       <div className="container mx-auto text-center sm:text-left lg:pl-16">
         <h2 className="text-lg mb-4 font-semibold">

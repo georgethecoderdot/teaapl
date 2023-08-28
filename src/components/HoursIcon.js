@@ -1,6 +1,6 @@
 import React from "react";
 import Tooltip from "./Toolip";
-import clock from "./images/clock.gif";
+import clock from "../images/clock.gif";
 
 function HoursIcon() {
   return (

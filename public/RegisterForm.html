@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
@@ -48,7 +52,12 @@
             >
               Δημιουργία Λογαριασμού
             </h1>
-            <form class="space-y-4 md:space-y-6" action="#">
+            <form
+              class="space-y-4 md:space-y-6"
+              action="#"
+              id="registrationForm"
+              onsubmit="return validatePasswords()"
+            >
               <div>
                 <label for="email" class="block mb-2 text-sm text-gray-600"
                   >Email</label
@@ -59,7 +68,7 @@
                   id="email"
                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Email"
-                  required=""
+                  required
                 />
               </div>
               <div>
@@ -72,22 +81,25 @@
                   id="afm"
                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="ΑΦΜ"
-                  required=""
+                  pattern="[0-9]{9}"
+                  maxlength="9"
+                  required
                 />
               </div>
+
               <div>
                 <label for="date" class="block mb-2 text-sm text-gray-600"
-                  >Ημ. Γέννησης</label
+                  >Ημερομηνία Γέννησης</label
                 >
                 <input
-                  type="text"
+                  type="date"
                   name="date"
                   id="date"
                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Ημ. Γέννησης"
-                  required=""
+                  required
                 />
               </div>
+
               <div>
                 <label for="username" class="block mb-2 text-sm text-gray-600"
                   >Username</label
@@ -98,7 +110,7 @@
                   id="username"
                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Username"
-                  required=""
+                  required
                 />
               </div>
               <div class="mb-6 relative">
@@ -117,7 +129,7 @@
                   onclick="togglePasswordVisibility('password', 'togglePasswordIcon')"
                   class="absolute top-8 right-4 cursor-pointer"
                 >
-                  <i id="togglePasswordIcon">🔒</i>
+                  <i id="togglePasswordIcon" class="fas fa-eye-slash"></i>
                 </span>
               </div>
 
@@ -139,7 +151,10 @@
                   onclick="togglePasswordVisibility('confirm-password', 'toggleConfirmPasswordIcon')"
                   class="absolute top-8 right-4 cursor-pointer"
                 >
-                  <i id="toggleConfirmPasswordIcon">🔒</i>
+                  <i
+                    id="toggleConfirmPasswordIcon"
+                    class="fas fa-eye-slash"
+                  ></i>
                 </span>
               </div>
               <div class="flex items-start">
@@ -149,7 +164,7 @@
                     aria-describedby="terms"
                     type="checkbox"
                     class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                    required=""
+                    required
                   />
                 </div>
                 <div class="ml-3 text-sm">
@@ -198,11 +213,25 @@
 
         if (passwordInput.type === "password") {
           passwordInput.type = "text";
-          icon.textContent = "🔓";
+          icon.classList.remove("fa-eye-slash");
+          icon.classList.add("fa-eye");
         } else {
           passwordInput.type = "password";
-          icon.textContent = "🔒";
+          icon.classList.remove("fa-eye");
+          icon.classList.add("fa-eye-slash");
         }
+      }
+
+      function validatePasswords() {
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirm-password").value;
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match.");
+          return false;
+        }
+        return true;
       }
     </script>
   </body>
