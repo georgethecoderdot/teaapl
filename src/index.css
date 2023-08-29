@@ -200,5 +200,5 @@ th:not(:last-child) {
 /* for anakoinoseis.js */
 
 .main-container {
-  padding-top: 80px; /* Change this value based on the height of your navbar */
+  padding-top: 70px;
 }

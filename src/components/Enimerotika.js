@@ -4,7 +4,7 @@ const Enimerotika = () => {
   return (
     <div>
       <div class="flex flex-col gap-4 h-screen items-center justify-center">
-        <h1 className="text-3xl text-center font-bold   mb-10 uppercase">
+        <h1 className="text-3xl text-center font-bold text-custom-new-blue mb-10 uppercase">
           ΕΝΗΜΕΡΩΤΙΚΑ ΦΥΛΛΑΔΙΑ
         </h1>
 

@@ -108,14 +108,19 @@ function Genikes() {
 
   return (
     <div className="bg-gray-100 min-h-screen main-container ">
+      <div className="text-center pt-4">
+        <h1 className="text-3xl text-custom-new-blue font-bold">
+          Γενικές Συνελεύσεις
+        </h1>
+      </div>
       <div className="mx-auto container" style={{ maxWidth: "80%" }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 ">
           {subset.map((elem) => (
             <div
               key={elem.id}
-              className="block rounded-lg bg-white mt-6 p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
+              className="block rounded-lg bg-white mt-6 p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] "
             >
-              <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+              <h5 className="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
                 {elem.title}
               </h5>
               <div>

@@ -4,10 +4,10 @@ const Diagrafh = () => {
   return (
     <div>
       <section>
-        <h1 className="text-center text-2xl underline font-bold text-custom-new-blue mt-20 ">
+        <h1 className="text-center text-2xl underline font-bold text-custom-new-blue mt-24 ">
           ΔΙΑΓΡΑΦΗ
         </h1>
-        <h2 className="text-center text-xl underline font-bold text-custom-new-blue mt-20 ">
+        <h2 className="text-center text-xl underline font-bold text-custom-new-blue mt-14 ">
           Διαγραφή μέλους από το Ταμείο επέρχεται στις ακόλουθες περιπτώσεις:
         </h2>
         <div className="mt-20">
@@ -41,7 +41,7 @@ const Diagrafh = () => {
               Αλληλεγγύης.
             </p>
           </div>
-          <div className="mb-6 p-4  ml-4 mr-4 rounded-lg shadow-md border border-blue-400">
+          <div className="mb-6 p-4  ml-4 mr-4 rounded-lg shadow-md border border-blue-400 mb-20">
             <p className="text-left text-xl text-gray-700 mb-2">
               Η διαγραφή από το Ταμείο επέρχεται στις ανωτέρω περιπτώσεις από
               την ημερομηνία έκδοσης της απόφασης του Διοικητικού Συμβουλίου του

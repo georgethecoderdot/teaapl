@@ -7,15 +7,60 @@ import { faCoins, faChartPie } from "@fortawesome/free-solid-svg-icons";
 import { faChartLine } from "@fortawesome/free-solid-svg-icons";
 import { faHandHolding, faEuroSign } from "@fortawesome/free-solid-svg-icons";
 
+const formatNumber = (num, decimalPlaces) => {
+  const wholePart = Math.floor(num);
+  const decimalPart = Math.round(
+    (num - wholePart) * Math.pow(10, decimalPlaces)
+  );
+
+  return (
+    wholePart.toLocaleString("de-DE") +
+    "," +
+    decimalPart.toString().padStart(decimalPlaces, "0")
+  );
+};
+
+const animateValue = (start, end, duration, setter) => {
+  const incrementTime = 30;
+  const totalIncrements = Math.ceil(duration / incrementTime);
+  const incrementValue = (end - start) / totalIncrements;
+
+  let currentValue = start;
+  const timer = setInterval(() => {
+    currentValue += incrementValue;
+    if (currentValue >= end) {
+      currentValue = end;
+      setter(currentValue);
+      clearInterval(timer);
+    } else {
+      setter(currentValue);
+    }
+  }, incrementTime);
+};
+
 const Oikonomika = () => {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
 
+  const [netAsset, setNetAsset] = useState(0);
+  const [numberOfShares, setNumberOfShares] = useState(0);
+  const [sharePrice, setSharePrice] = useState(0);
+  const [dailyChange, setDailyChange] = useState(0);
+  const [yearlyChange, setYearlyChange] = useState(0);
+
+  useEffect(() => {
+    animateValue(0, 30118362.54, 2000, setNetAsset);
+    animateValue(0, 2275677.379, 2000, setNumberOfShares);
+    animateValue(0, 13.2349, 2000, setSharePrice);
+    animateValue(0, 0.29, 2000, setDailyChange);
+    animateValue(0, 6.56, 2000, setYearlyChange);
+  }, []);
+
   return (
     <div>
-      <section className="bg-white p-6 rounded-lg shadow-md  mt-16 ">
+      <section className="bg-white p-6 rounded-lg shadow-md  mt-20 ">
         <h1 className="text-center text-2xl font-bold underline  text-custom-new-blue mb-10">
           ΕΠΕΝΔΥΣΕΙΣ
         </h1>
@@ -83,7 +128,7 @@ const Oikonomika = () => {
                     />
                   </div>
                   <h2 class="text-white text-3xl font-bold mb-2 font-sans text-rendering-optimizeLegibility leading-none tracking-normal">
-                    30.118.362,54 €{" "}
+                    {formatNumber(netAsset, 2)} €
                   </h2>
                   <h3 class="text-white text-opacity-80">Καθαρό Ενεργητικό</h3>
                 </div>
@@ -95,7 +140,7 @@ const Oikonomika = () => {
                     />
                   </div>
                   <h2 class="text-white text-3xl font-bold mb-2 font-sans text-rendering-optimizeLegibility leading-none tracking-normal">
-                    2.275.677,379 €
+                    {formatNumber(numberOfShares, 3)} €
                   </h2>
                   <h3 class="text-white text-opacity-80">Αριθμός Μεριδίων</h3>
                 </div>
@@ -121,7 +166,7 @@ const Oikonomika = () => {
                     </div>
                   </div>
                   <h2 class="text-white text-3xl font-bold mb-2 font-sans text-rendering-optimizeLegibility leading-none tracking-normal">
-                    13,2349 €
+                    {formatNumber(sharePrice, 4)} €
                   </h2>
                   <h3 class="text-white text-opacity-80">
                     Καθαρή τιμή μεριδίου
@@ -135,7 +180,7 @@ const Oikonomika = () => {
                     />
                   </div>
                   <h2 class="text-white text-3xl font-bold mb-2 font-sans text-rendering-optimizeLegibility leading-none tracking-normal">
-                    0,29%
+                    {formatNumber(dailyChange, 2)}%
                   </h2>
                   <h3 class="text-white text-opacity-80">
                     Ημερήσια % μεταβολή
@@ -151,7 +196,7 @@ const Oikonomika = () => {
                     />
                   </div>
                   <h2 class="text-white text-3xl font-bold mb-2 font-sans text-rendering-optimizeLegibility leading-none tracking-normal">
-                    6,56%
+                    {formatNumber(yearlyChange, 2)}%
                   </h2>
                   <h3 class="text-white text-opacity-80">
                     Μεταβολή από αρχή του έτους έως ημ. Αποτίμησης

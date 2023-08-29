@@ -4,7 +4,7 @@ const Eisfores = () => {
   return (
     <div>
       <section>
-        <h1 className="text-center text-2xl underline font-bold text-custom-new-blue mt-20">
+        <h1 className="text-center text-2xl underline font-bold text-custom-new-blue mt-24">
           ΕΙΣΦΟΡΕΣ
         </h1>
         <body class=" p-4 mt-20 text-1xl">
@@ -91,7 +91,7 @@ const Eisfores = () => {
                   <th class=" p-5">Ατομική Μερίδα Κλ. Εφάπαξ</th>
                 </tr>
               </thead>
-              <tbody className="w-95 max-h-[calc(89%-0.8rem)] bg-white-50 m-2 rounded-lg overflow-auto border border-gray-300 py-2 px-4">
+              <tbody className="w-95 max-h-[calc(89%-0.8rem)] bg-white-50 m-2 rounded-lg overflow-auto border border-gray-300 py-2 px-4 mb-10">
                 <tr>
                   <td>Α</td>
                   <td>30,00 €</td>

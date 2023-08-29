@@ -68,8 +68,8 @@ const Faq = () => {
   };
 
   return (
-    <div className="p-2 sm:p-4 md:p-8 bg-white mt-12 flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center text-black">
+    <div className="p-2 sm:p-4 md:p-8 bg-white mt-[-20] flex flex-col items-center justify-center min-h-screen">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center text-custom-new-blue">
         Συχνές Ερωτήσεις
       </h1>
       <button
@@ -90,16 +90,18 @@ const Faq = () => {
       </button>
 
       {faqData.map((item, index) => (
-        <div className="border rounded-lg mb-4" key={index}>
+        <div className="border-2 border-gray-300 rounded-lg mb-4" key={index}>
           <button
-            className="w-full text-left cursor-pointer px-4 py-3 flex justify-between items-center"
+            className="w-full text-left cursor-pointer px-4 py-3 flex justify-between items-center border-b-2 border-gray-300"
             onClick={() => handleToggle(index)}
             aria-expanded={expandedIndex === index}
           >
             <div className="font-semibold text-blue-500">{item.question}</div>
           </button>
           {(expandedIndex === index || expandAll) && (
-            <div className="px-4 py-2 bg-gray-200">{item.answer}</div>
+            <div className="px-4 py-2 bg-gray-200 border-t-2 border-gray-300">
+              {item.answer}
+            </div>
           )}
         </div>
       ))}

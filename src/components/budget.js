@@ -32,12 +32,12 @@ function BudgetsSection() {
     <div className="h-screen flex items-center justify-center py-2 md:py-12 bg-gray-100">
       <div className="max-w-full md:max-w-2xl mx-auto bg-white p-4 md:p-8 rounded-xl shadow-lg transition-transform transform hover:scale-105 duration-300">
         {/* Title */}
-        <h1 className="text-2xl md:text-4xl font-extrabold mb-4 md:mb-6 text-custom-new-blue border-b pb-2 md:pb-4">
+        <h1 className=" text-center text-xl md:text-2xl font-extrabold mb-4 md:mb-6 text-custom-new-blue border-b pb-2 md:pb-4">
           ΠΡΟΥΠΟΛΟΓΙΣΜΟΙ
         </h1>
 
         {/* Subtitle */}
-        <p className="text-gray-700 mb-4 md:mb-8 text-sm md:text-lg leading-relaxed">
+        <p className="text-gray-700 mb-4 md:mb-8 text-xs md:text-sm leading-relaxed">
           Εδώ μπορείτε να βρείτε τα τελευταία αρχεία του προϋπολογισμού μας για
           λήψη.
         </p>
@@ -67,7 +67,7 @@ function BudgetsSection() {
 
           {/* PDF Info & Download */}
           <div>
-            <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
+            <h2 className="text-lg md:text-xl font-bold text-gray-800 mb-2">
               Αναφορά προϋπολογισμών 2017
             </h2>
             <a

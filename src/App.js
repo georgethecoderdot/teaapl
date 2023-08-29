@@ -22,11 +22,14 @@ import Anakoinwseis from "./components/anakoinoseis";
 import Genikes from "./components/Genikes";
 import Oikonomika from "./components/ependiseis";
 import Ependytiki from "./components/ependitiki";
+import Analogistikes from "./components/analogistikes";
+import Ergo from "./components/ergo";
+import Entypa from "./components/Entipa";
 
 function App() {
   return (
     <Router>
-      <div className="flex flex-col overflow-x-hidden ">
+      <div className="flex flex-col  ">
         <Navbar />
         <div className="flex-grow">
           <Routes>
@@ -50,6 +53,9 @@ function App() {
             <Route path="/teaapl/Genikes" element={<Genikes />} />
             <Route path="/teaapl/ependiseis" element={<Oikonomika />} />
             <Route path="/teaapl/ependitiki" element={<Ependytiki />} />
+            <Route path="/teaapl/analogistikes" element={<Analogistikes />} />
+            <Route path="/teaapl/ergo" element={<Ergo />} />
+            <Route path="/teaapl/Entipa" element={<Entypa />} />
           </Routes>
         </div>
       </div>

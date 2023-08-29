@@ -3,9 +3,9 @@ import PDF from "../images/icon.png";
 const Nomothesia = () => {
   return (
     <div>
-      <section className="mb-10 flex justify-center items-center min-h-screen bg-white-100">
-        <table className="w-1/2 max-w-2xl mx-auto bg-white border-collapse border border-gray-300 mt-20">
-          <thead className="text-xl font-bold text-customBlue p-4 text-lg leading-10  border-b-2 border-customBlue pb-2 bg-custom-new-blue text-white">
+      <section className="mb-10 justify-center items-center min-h-screen bg-white-100">
+        <table className="w-1/2 max-w-2xl mx-auto bg-white border-collapse border border-gray-300 mt-28">
+          <thead className="sticky top-16 z-10  text-xl font-bold text-custom-new-blue p-4  leading-10  border-b-2 border-custom-new-blue pb-2 bg-custom-new-blue text-white">
             <tr className="border-b">
               <th className="text-center py-2 pl-2" colSpan="2">
                 ΝΟΜΟΘΕΣΙΑ
@@ -13,7 +13,7 @@ const Nomothesia = () => {
             </tr>
           </thead>
           <tbody className="w-95 max-h-[calc(89%-0.8rem)] bg-white-50 m-2 rounded-lg overflow-auto border border-gray-300 py-2 px-4">
-            <tr className="border-b">
+            <tr className="border-b hover:bg-custom-new-blue hover:text-white">
               <td className="text-left">
                 <span className="underline">Νόμος 3029/2002:</span> Ιδρυτικός
                 νόμος Ταμείων Επαγγελματικής ασφάλισης
@@ -27,12 +27,12 @@ const Nomothesia = () => {
                     target="_blank"
                     href="https://icons8.com/icon/l0vjMqIboTRs/pdf"
                   ></a>
-                  <img src={PDF} className="w-24 h-10"></img>
+                  <img src={PDF} className="w-24 h-8 "></img>
                   <a target="_blank" href="https://icons8.com"></a>
                 </a>
               </td>
             </tr>
-            <tr className="border-b">
+            <tr className="border-b hover:bg-custom-new-blue hover:text-white">
               <td className="text-left">
                 <span className="underline">Οδηγία 2003/41/ΕΚ:</span> Για τις
                 δραστηριότητες και την εποπτεία των ιδρυµάτων που προσφέρουν
@@ -47,12 +47,12 @@ const Nomothesia = () => {
                     target="_blank"
                     href="https://icons8.com/icon/l0vjMqIboTRs/pdf"
                   ></a>
-                  <img src={PDF} className="w-24 h-10 md:w-20 md:h-10"></img>
+                  <img src={PDF} className="w-24 h-8 "></img>
                   <a target="_blank" href="https://icons8.com"></a>
                 </a>
               </td>
             </tr>
-            <tr className="border-b">
+            <tr className="border-b hover:bg-custom-new-blue hover:text-white">
               <td className="text-left">
                 <span className="underline">Αρίθ.Φ.Επαγ.ασφ./οικ.16:</span> Όροι
                 λειτουργίας των Ταμείων Επαγγελματικής Ασφάλισης
@@ -66,12 +66,12 @@ const Nomothesia = () => {
                     target="_blank"
                     href="https://icons8.com/icon/l0vjMqIboTRs/pdf"
                   ></a>
-                  <img src={PDF} className="w-20 h-10"></img>
+                  <img src={PDF} className="w-24 h-8  "></img>
                   <a target="_blank" href="https://icons8.com"></a>
                 </a>
               </td>
             </tr>
-            <tr className="border-b">
+            <tr className="border-b hover:bg-custom-new-blue hover:text-white">
               <td className="text-left">
                 <span className="underline">Αρίθ.Φ.Επαγ.ασφ./43:</span>{" "}
                 Διαδοχική Ασφάλιση σε Ταμεία Επαγγελματικής Ασφάλισης
@@ -85,12 +85,12 @@ const Nomothesia = () => {
                     target="_blank"
                     href="https://icons8.com/icon/l0vjMqIboTRs/pdf"
                   ></a>
-                  <img src={PDF} className="w-20 h-10"></img>
+                  <img src={PDF} className="w-24 h-8  "></img>
                   <a target="_blank" href="https://icons8.com"></a>
                 </a>
               </td>
             </tr>
-            <tr className="border-b">
+            <tr className="border-b hover:bg-custom-new-blue hover:text-white">
               <td className="text-left">
                 <span className="underline">Νόμος 4172/2013:</span> Ρυθμίσεις
                 Φορολογίας Εισοδήματος (στο άρθρο 14, παράγραφος 1, περίπτωση ε
@@ -106,12 +106,12 @@ const Nomothesia = () => {
                     target="_blank"
                     href="https://icons8.com/icon/l0vjMqIboTRs/pdf"
                   ></a>
-                  <img src={PDF} className="w-20 h-10"></img>
+                  <img src={PDF} className="w-24 h-8  "></img>
                   <a target="_blank" href="https://icons8.com"></a>
                 </a>
               </td>
             </tr>
-            <tr className="border-b">
+            <tr className="border-b hover:bg-custom-new-blue hover:text-white">
               <td className="text-left">
                 <span className="underline">Νόμος 4261/2014:</span> Στο άρθρο
                 180 περιγράφεται η εποπτεία των Ταμείων Επαγγελματικής Ασφάλισης
@@ -126,12 +126,12 @@ const Nomothesia = () => {
                     target="_blank"
                     href="https://icons8.com/icon/l0vjMqIboTRs/pdf"
                   ></a>
-                  <img src={PDF} className="w-20 h-10"></img>
+                  <img src={PDF} className="w-24 h-10  "></img>
                   <a target="_blank" href="https://icons8.com"></a>
                 </a>
               </td>
             </tr>
-            <tr className="border-b">
+            <tr className="border-b hover:bg-custom-new-blue hover:text-white">
               <td className="text-left">
                 <span className="underline">Αριθ. Φ.51010/οικ.1893/15:</span>{" "}
                 Κανονισμός Δεοντολογίας και Καλών Πρακτικών των Ταμείων
@@ -146,12 +146,12 @@ const Nomothesia = () => {
                     target="_blank"
                     href="https://icons8.com/icon/l0vjMqIboTRs/pdf"
                   ></a>
-                  <img src={PDF} className="w-20 h-10"></img>
+                  <img src={PDF} className="w-24 h-8  "></img>
                   <a target="_blank" href="https://icons8.com"></a>
                 </a>
               </td>
             </tr>
-            <tr className="border-b">
+            <tr className="border-b hover:bg-custom-new-blue hover:text-white">
               <td className="text-left">
                 <span className="underline">ΠΟΛ 1088/17.04.2015:</span> Στη
                 σελίδα 14, άρθρο 5, παράγραφος 7, περιγράφεται η τεκμηρίωση των
@@ -167,12 +167,12 @@ const Nomothesia = () => {
                     target="_blank"
                     href="https://icons8.com/icon/l0vjMqIboTRs/pdf"
                   ></a>
-                  <img src={PDF} className="w-20 h-10"></img>
+                  <img src={PDF} className="w-24 h-8  "></img>
                   <a target="_blank" href="https://icons8.com"></a>
                 </a>
               </td>
             </tr>
-            <tr className="border-b">
+            <tr className="border-b hover:bg-custom-new-blue hover:text-white">
               <td className="text-left">
                 <span className="underline">ΠΟΛ 1227/14.12.2018:</span>{" "}
                 Φορολογική μεταχείριση εισφορών υπέρ Ταμείων Επαγγελματικής
@@ -187,7 +187,7 @@ const Nomothesia = () => {
                     target="_blank"
                     href="https://icons8.com/icon/l0vjMqIboTRs/pdf"
                   ></a>
-                  <img src={PDF} className="w-20 h-10"></img>
+                  <img src={PDF} className="w-24 h-8  "></img>
                   <a target="_blank" href="https://icons8.com"></a>
                 </a>
               </td>

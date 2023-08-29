@@ -10,6 +10,7 @@ import log from "../images/log_in.png";
 import FundFigures from "../components/Impo";
 import FullScreenSlider from "../components/slider";
 import doc from "../images/doc.png";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   useEffect(() => {
@@ -42,7 +43,7 @@ function HomePage() {
     <>
       <FullScreenSlider />
       <div
-        className="py-4 sm:py-16 px-4 sm:px-8 flex flex-col items-center w-full  "
+        className="py-4 sm:py-16 px-4 sm:px-8 flex flex-col items-center w-full overflow-x-hidden   "
         style={{ backgroundColor: "#FFFFFF" }}
         data-aos="fade-left"
       >
@@ -144,20 +145,16 @@ function HomePage() {
 
       <div className="fixed bottom-10 left-10 z-50 group hover:bg-blue-600 rounded-full w-12 h-12">
         {/* Base icon link */}
-        <a
-          href={process.env.PUBLIC_URL + ""}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/teaapl/Entipa"
           className="absolute bottom-0 left-0 bg-blue-500 w-12 h-12 rounded-full focus:outline-none p-0 overflow-hidden z-10"
         >
           <img src={doc} alt="Connect" className="w-full h-full object-cover" />
-        </a>
+        </Link>
 
         {/* Hover icon link */}
         <a
           href={process.env.PUBLIC_URL + "/LoginForm.html"}
-          target="_blank"
-          rel="noopener noreferrer"
           className="absolute bottom-0 left-0 bg-blue-500 w-12 h-12 rounded-full focus:outline-none p-0 overflow-hidden transform group-hover:translate-y-8 transition-transform duration-300 z-20"
         >
           <img

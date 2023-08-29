@@ -25,8 +25,8 @@ const Antiprosopoi = () => {
 
   return (
     <main className="table">
-      <section className="table_header">
-        <h1 className="text-3xl font-bold text-gray-700  p-4 m-0">
+      <section className="table_header mt-[-50px]">
+        <h1 className="text-2xl font-bold text-custom-new-blue  p-4 m-0 ">
           ΑΝΤΙΠΡΟΣΩΠΟΙ ΑΝΑ ΝΟΜΟ
         </h1>
       </section>

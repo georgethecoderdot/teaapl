@@ -5,7 +5,7 @@ const Isologismoi = () => {
   return (
     <div>
       <main className="table">
-        <h1 className=" text-center text-2xl underline font-bold text-custom-new-blue  mt-[-30px] mb-10">
+        <h1 className=" text-center text-2xl underline font-bold text-custom-new-blue  mt-[-20px] mb-10">
           ΙΣΟΛΟΓΙΣΜΟΙ
         </h1>
 

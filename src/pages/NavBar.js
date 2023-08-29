@@ -439,64 +439,48 @@ function Navbar() {
                         <Link
                           to="/teaapl/istoriko"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΙΣΤΟΡΙΚΟ
                         </Link>
                         <Link
                           to="/teaapl/skopos"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΣΚΟΠΟΣ-ΚΛΑΔΟΙ ΑΣΦΑΛΙΣΗΣ
                         </Link>
                         <Link
                           to="/teaapl/Dioikisi"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΔΙΟΙΚΗΣΗ
                         </Link>
                         <Link
                           to="/teaapl/katastatiko"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΚΑΤΑΣΤΑΤΙΚΟ
                         </Link>
                         <a
                           href="https://www.teaapl.gr/images/pdf/%CE%95%CE%A3%CE%A9%CE%A4%CE%95%CE%A1%CE%99%CE%9A%CE%9F%CE%A3%20%CE%9A%CE%91%CE%9D%CE%9F%CE%9D%CE%99%CE%A3%CE%9C%CE%9F%CE%A3.PDF"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΕΣΩΤΕΡΙΚΟΣ ΚΑΝΟΝΙΣΜΟΣ
                         </a>
                         <Link
                           to="/teaapl/Enimerotika"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΕΝΗΜΕΡΩΤΙΚΑ ΦΥΛΛΑΔΙΑ
                         </Link>
                         <Link
                           to="/teaapl/Nomothesia"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΝΟΜΟΘΕΣΙΑ
                         </Link>
                         <Link
                           to="/teaapl/Antiprosopoi"
                           className="block px-4 py-2 text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΑΝΤΙΠΡΟΣΩΠΟΙ ΑΝΑ ΝΟΜΟ
                         </Link>
@@ -540,40 +524,30 @@ function Navbar() {
                         <Link
                           to="/teaapl/pleonektimata"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΠΛΕΟΝΕΚΤΗΜΑΤΑ
                         </Link>
                         <Link
                           to="/teaapl/eggrafi"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΕΓΓΡΑΦΗ
                         </Link>
                         <Link
                           to="/teaapl/Eisfores"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΕΙΣΦΟΡΕΣ
                         </Link>
                         <Link
                           to="/teaapl/paroxes"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΠΑΡΟΧΕΣ
                         </Link>
                         <Link
                           to="/teaapl/Diagrafi"
                           className="block px-4 py-2 text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΔΙΑΓΡΑΦΗ
                         </Link>
@@ -615,55 +589,43 @@ function Navbar() {
                         <Link
                           to="/teaapl/ependiseis"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΕΠΕΝΔΥΣΕΙΣ
                         </Link>
                         <a
                           href="https://www.alphatrust.gr/funds/tea-astunomikon-purosveston-limenikon-mikto-institutional-share-class/"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΑΜΟΙΒΑΙΟ ΚΕΦΑΛΑΙΟ
                         </a>
                         <a
                           href="https://www.teaapl.gr/images/pdf/%CE%95%CE%A0%CE%95%CE%9D%CE%94%CE%A5%CE%A4%CE%99%CE%9A%CE%9F%CE%A3%20%CE%9A%CE%91%CE%9D%CE%9F%CE%9D%CE%99%CE%A3%CE%9C%CE%9F%CE%A3.PDF"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΚΑΝΟΝΙΣΜΟΣ ΕΠΕΝΔΥΣΕΩΝ
                         </a>
                         <Link
                           to="/teaapl/ependitiki"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΕΠΕΝΔΥΤΙΚΗ ΕΠΙΤΡΟΠΗ
                         </Link>
                         <Link
                           to="/teaapl/isologismoi"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΙΣΟΛΟΓΙΣΜΟΙ
                         </Link>
-                        <a
-                          href="#"
+                        <Link
+                          to="/teaapl/analogistikes"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
                         >
                           ΑΝΑΛΟΓΙΣΤΙΚΕΣ ΜΕΛΕΤΕΣ
-                        </a>
+                        </Link>
                         <Link
                           to="/teaapl/budget"
                           className="block px-4 py-2 text-xs font-light
                           text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΠΡΟΥΠΟΛΟΓΙΣΜΟΙ
                         </Link>
@@ -705,33 +667,27 @@ function Navbar() {
                         <Link
                           to="/teaapl/anakoinoseis"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΑΝΑΚΟΙΝΩΣΕΙΣ
                         </Link>
                         <Link
                           to="/teaapl/Genikes"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΓΕΝΙΚΕΣ ΣΥΝΕΛΕΥΣΕΙΣ
                         </Link>
                         <Link
                           to="/teaapl/FAQs"
                           className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
                         >
                           ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ
                         </Link>
-                        <a
-                          href="#"
+                        <Link
+                          to="/teaapl/ergo"
                           className="block px-4 py-2 text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
                         >
                           ΤΟ ΕΡΓΟ ΤΟΥ ΤΑΜΕΙΟΥ
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </div>

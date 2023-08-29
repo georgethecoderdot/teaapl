@@ -9,7 +9,7 @@ const Pleonekthmata = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 py-12 main-container">
+    <div className="flex flex-col items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 py-12 main-container mt-10">
       <div className="bg-white p-6 rounded-lg shadow-lg w-4/5">
         <h1 className="text-center text-3xl font-semibold  text-custom-new-blue mb-6">
           ΠΛΕΟΝΕΚΤΗΜΑΤΑ
@@ -77,7 +77,7 @@ const Pleonekthmata = () => {
         </div>
 
         <p
-          className="text-lg text-white bg-blue-500 px-6 py-4 rounded-lg mb-5 transition-transform transform hover:scale-105"
+          className="text-lg text-center text-black  px-6 py-4 rounded-lg mb-5 transition-transform transform hover:scale-105"
           data-aos="zoom-in"
         >
           Μπορώ να συμμετάσχω στην διοίκηση του Ταμείου καθώς κάθε μέλος έχει το
