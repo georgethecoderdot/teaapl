@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/teaapl/static/css/main.a9643d07.css",
-    "main.js": "/teaapl/static/js/main.835821d3.js",
+    "main.css": "/teaapl/static/css/main.f9a871b0.css",
+    "main.js": "/teaapl/static/js/main.49ce9e4b.js",
     "static/js/787.94f13d48.chunk.js": "/teaapl/static/js/787.94f13d48.chunk.js",
     "static/media/concept-save-money.jpg": "/teaapl/static/media/concept-save-money.3a8f2de985fd69992724.jpg",
     "static/media/saving_from_phone.jpg": "/teaapl/static/media/saving_from_phone.1b8751ee9e5c809e92c6.jpg",
@@ -13,34 +13,19 @@
     "static/media/search.gif": "/teaapl/static/media/search.5ebf5e493fb068fcb892.gif",
     "static/media/clock.gif": "/teaapl/static/media/clock.2600347a01f7de8ff705.gif",
     "static/media/doc.png": "/teaapl/static/media/doc.b756b42a13bcb1657e62.png",
-    "static/media/gianarakis_small.jpg": "/teaapl/static/media/gianarakis_small.28421cb9348e20867252.jpg",
-    "static/media/vasdekis_small.jpg": "/teaapl/static/media/vasdekis_small.a26ec8a0dfa0bf98840f.jpg",
-    "static/media/skiadas_small.jpg": "/teaapl/static/media/skiadas_small.85013308af639f78d680.jpg",
-    "static/media/kapageridi.jpg": "/teaapl/static/media/kapageridi.36a31c5da84df0d83d1e.jpg",
     "static/media/amoibaio_kefalaio.png": "/teaapl/static/media/amoibaio_kefalaio.165de863c5bc7ec4b5c1.png",
-    "static/media/savva.jpg": "/teaapl/static/media/savva.b84a6758fa31104fffd8.jpg",
-    "static/media/anesti_small.jpg": "/teaapl/static/media/anesti_small.116198f6a6c615ccba60.jpg",
-    "static/media/eustathiou.jpg": "/teaapl/static/media/eustathiou.f711d5b719439fa65d87.jpg",
-    "static/media/oikonimidou.jpg": "/teaapl/static/media/oikonimidou.eaf105ed96f929591cc1.jpg",
-    "static/media/tsakalis_small.jpg": "/teaapl/static/media/tsakalis_small.0e87b34ed98356e90d82.jpg",
-    "static/media/giakoumi.jpg": "/teaapl/static/media/giakoumi.bfa8c7d30657c8dd9bbe.jpg",
-    "static/media/karampelia.jpg": "/teaapl/static/media/karampelia.2af0fea8352c5ea1d68f.jpg",
-    "static/media/mpomponis.jpg": "/teaapl/static/media/mpomponis.b4a5edc21f098a5e7e6a.jpg",
-    "static/media/mitropoulou.jpg": "/teaapl/static/media/mitropoulou.a692885d5bdf56ebf8ff.jpg",
-    "static/media/dwrea.jpg": "/teaapl/static/media/dwrea.00662785f0a828c6a37d.jpg",
-    "static/media/dimotakis.jpg": "/teaapl/static/media/dimotakis.309f8dd2a4f6497ad7df.jpg",
     "static/media/log_in.png": "/teaapl/static/media/log_in.9d382cee9b510d476ef9.png",
     "static/media/slick.svg": "/teaapl/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/teaapl/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/teaapl/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "index.html": "/teaapl/index.html",
     "static/media/slick.woff": "/teaapl/static/media/slick.295183786cd8a1389865.woff",
-    "main.a9643d07.css.map": "/teaapl/static/css/main.a9643d07.css.map",
-    "main.835821d3.js.map": "/teaapl/static/js/main.835821d3.js.map",
+    "main.f9a871b0.css.map": "/teaapl/static/css/main.f9a871b0.css.map",
+    "main.49ce9e4b.js.map": "/teaapl/static/js/main.49ce9e4b.js.map",
     "787.94f13d48.chunk.js.map": "/teaapl/static/js/787.94f13d48.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a9643d07.css",
-    "static/js/main.835821d3.js"
+    "static/css/main.f9a871b0.css",
+    "static/js/main.49ce9e4b.js"
   ]
 }

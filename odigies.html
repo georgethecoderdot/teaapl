@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
+    <title>ΟΔΗΓΙΕΣ</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      .collapsible {
+        display: none;
+      }
+      .show {
+        display: block;
+      }
+      .svg-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url("cool-background.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body class="p-2 bg-gradient-to-r from-blue-100 to-blue-400">
+    <div class="svg-background bg-cover bg-center h-screen">
+      <div class="max-w-2xl p-2 mx-auto bg-white border">
+        <h2 class="text-xl text-center text-blue-800 xl:text-3xl">
+          ΟΔΗΓΙΕΣ ΣΥΜΠΛΗΡΩΣΗΣ ΤΗΣ ΑΙΤΗΣΗΣ Τ.Ε.Α.Α.Π.Λ.
+        </h2>
+
+        <div class="p-2">
+          <div class="grid grid-rows-5 gap-4 p-4 bg-white rounded-lg shadow-lg">
+            <h3 class="p-4 font-bold text-center lg:text-xl">
+              ΓΝΩΣΤΟΠΟΙΗΣΗ ΠΡΟΣ ΤΟΥΣ ΑΣΦΑΛΙΣΜΕΝΟΥΣ ΣΤΟ Τ.Ε.Α.Α.Π.Λ.
+            </h3>
+
+            <p
+              class="p-4 mx-3 text-left bg-white rounded-md shadow-md lg:text-lg"
+            >
+              &nbsp; Σύμφωνα με το άρθρο 11 του Ν.2472/1997, όπως ισχύει, σας
+              ενημερώνουμε ότι υπεύθυνος επεξεργασίας των δεδομένων της αίτησης
+              ένταξης απογραφικού δελτίου, είναι το Τ.Ε.Α.Α.Π.Λ., που εδρεύει
+              στην Αθήνα, οδός Βερανζέρου 30, Τ.Κ. 104 32.
+            </p>
+
+            <p
+              class="p-4 mx-3 text-left bg-white rounded-md shadow-md lg:text-lg"
+            >
+              &nbsp; Σκοπός της επεξεργασίας των δεδομένων είναι ή ένταξη των
+              αιτούντων στην ασφάλιση του Ταμείου, σύμφωνα με τα σχετικά του
+              Καταστατικού του Ταμείου, χωρίς τα οποία δεν δύναται αυτή να
+              πραγματοποιηθεί.
+            </p>
+
+            <p
+              class="p-4 mx-3 text-left bg-white rounded-md shadow-md lg:text-lg"
+            >
+              &nbsp; Αποδέκτες των σχετικών δεδομένων είναι το Τ.Ε.Α.Α.Π.Λ.
+              καθώς και η εταιρεία που έχει αναλάβει τη διαχελιριση της
+              λειτουργίας στο Τ.Ε.Α.Α.Π.Λ.
+            </p>
+
+            <p
+              class="p-4 mx-3 text-left bg-white rounded-md shadow-md lg:text-lg"
+            >
+              &nbsp; Σας ενημερώνουμε ότι οι ασφαλισμένοι στο Ταμείο διατηρούν
+              τα δικαιώματα πρόσβασης και αντίρρησης για τα δεδομένα που τους
+              αφορούν των άρθρων 12 και 13 του Ν.2472/1997.
+            </p>
+          </div>
+
+          <div class="p-2 bg-white rounded-md shadow-md">
+            <h3 class="p-2 font-bold text-center lg:text-lg">
+              ΣΥΜΠΛΗΡΩΣΗ ΣΤΟΙΧΕΙΩΝ ΣΤΑ ΠΕΔΙΑ ΤΗΣ ΑΙΤΗΣΗΣ:
+            </h3>
+
+            <div class="p-4 bg-white rounded-md shadow-md">
+              <div class="grid grid-cols-5 gap-4 p-2 border-b">
+                <div class="col-span-2 p-2">
+                  <p class="p-1 font-medium">
+                    Στο πεδίο <span class="font-bold">Φύλο [_]</span>
+                  </p>
+                </div>
+
+                <div class="col-span-3 p-2">
+                  <p class="p-1">
+                    τίθεται <span class="font-bold">Α</span> για άνδρα,
+                    <span class="font-bold">Γ</span> για γυναίκα
+                  </p>
+                </div>
+              </div>
+              <div class="grid grid-cols-5 p-2 border">
+                <div class="col-span-2 p-2">
+                  <p class="p-1 font-medium">
+                    Στο πεδίο <span class="font-bold">Φορέας [_]</span>
+                  </p>
+                </div>
+
+                <div class="col-span-3 p-2">
+                  <ul class="list-disc list-inside">
+                    <li>
+                      τίθεται <span class="font-bold">ΕΑ</span> στους
+                      Αστυνομικούς
+                    </li>
+                    <li>
+                      τίθεται <span class="font-bold">ΕΦ</span> στους Ειδικούς
+                      Φρουρούς
+                    </li>
+                    <li>
+                      τίθεται <span class="font-bold">ΣΦ</span> στους
+                      Συνοριακούς Φύλακες
+                    </li>
+                    <li>
+                      τίθεται <span class="font-bold">ΠΥΕΑ</span> στους
+                      Πολιτικούς Υπαλλήλους ΕΛ.ΑΣ
+                    </li>
+                    <li>
+                      τίθεται <span class="font-bold">ΠΣ</span> στους
+                      Πυροσβέστες
+                    </li>
+                    <li>
+                      τίθεται <span class="font-bold">ΠΣ5</span> στους
+                      Πυροσβέστες 5ετούς υποχρέωσης
+                    </li>
+                    <li>
+                      τίθεται <span class="font-bold">ΠΥΠΣ</span> στους
+                      Πολιτικούς Υπαλλήλους Πυροσβεστικού Σώματος
+                    </li>
+                    <li>
+                      τίθεται <span class="font-bold">ΛΣ</span> στους Λιμενικούς
+                    </li>
+                    <li>
+                      τίθεται <span class="font-bold">ΠΥΛΣ</span> στους
+                      Πολιτικούς Υπαλλήλους Λιμενικού Σώματος
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-5 p-2 border">
+                <div class="col-span-2 p-2">
+                  <p class="p-1">
+                    Στο πεδίο <span class="font-bold">Εισφορά [_,_]</span>
+                  </p>
+                </div>
+
+                <div class="col-span-3 p-2">
+                  <p class="p-1">
+                    Επιλέγεται ποσό
+                    <span class="font-bold">30 &euro; έως 500 &euro; </span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-5 p-2 border">
+                <div class="col-span-2 p-2">
+                  <p class="p-1">
+                    Στο πεδίο <span class="font-bold"> Δικαιούχοι [_]</span>
+                  </p>
+                </div>
+
+                <div class="col-span-3 p-2">
+                  <p class="p-1">
+                    &nbsp; Συμπληρώνουμε τον Α.Δ.Τ ή τον Α.Φ.Μ., Ονοματεπώνυμο
+                    και Σχέση του δικαιούχου με τον ασφαλισμένο (π.χ. σύζυγος ή
+                    τέκνο ή γονέας κλπ.).
+                  </p>
+
+                  <p class="p-1">
+                    &nbsp; Σε περίπτωση που επιθυμούμε τους νόμικους κληρονόμους
+                    (βάσει του Α.Κ.) συμπληρώνουμε στο πεδίο Ονοματεπώνυμο τη
+                    φράση:
+                    <span class="font-bold">
+                      &lt;&lt; Νόμιμοι Κληρονόμοι &gt;&gt;
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center p-4">
+          <p class="text-sm">&copy; 2023 teaapl</p>
+          <p class="p-2">|</p>
+          <p class="text-sm">Developed by SOFTBIZ</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scrollTopButton"
+      aria-label="Scroll to top"
+      class="scrollTopButton cursor-pointer fixed bottom-2.5 right-2.5 w-10 h-10 text-center z-50 decoration-white bg-blue-500 text-white p-2 rounded-full"
+    >
+      <i class="fa fa-chevron-up cursor-pointer"></i>
+    </button>
+    <script src="project-teaapl.js"></script>
+  </body>
+</html>
