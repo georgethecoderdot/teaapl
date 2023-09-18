@@ -1,53 +1,26 @@
-import { useState } from "react";
-import React from "react";
-
-const faqData = [
-  {
-    question: "Έχω δικαίωμα εγγραφής στο Ταμείο;",
-    answer:
-      "Δικαίωμα να εγγραφούν στο Ταμείο, έχουν όλοι οι Αστυνομικοί, Πυροσβέστες και  Λιμενικοί καθώς και το πολιτικό προσωπικό που εργάζεται στα τρία Αρχηγεία.",
-  },
-  {
-    question: "Με ποιον τρόπο μπορώ να καταβάλω τη μηνιαία μου εισφορά;",
-    answer:
-      "Η κράτηση της μηνιαίας εισφοράς γίνεται απευθείας από τη μισθοδοσία του μέλους. (Με την υποβολή της αίτησης εγγραφής, το μέλος ουσιαστικά εξουσιοδοτεί το Ταμείο να ζητάει κάθε μήνα από το αρμόδιο Τμήμα Μισθοδοσίας το αντίστοιχο ποσό).",
-  },
-
-  {
-    question: "Πότε έχω δικαίωμα να λάβω το ποσό της Ατομικής μου Μερίδας;",
-    answer:
-      "Τα μέλη αφού υποβάλουν τη σχετική αίτηση διαγραφής, έχουν δικαίωμα να λάβουν την Ατομικής τους μερίδα όταν πληρούν μία από τις ακόλουθες προϋποθέσεις:\n\nΗλικία 50 ετών έχοντας χρόνο ασφάλισης στο Ταμείο 10 έτη\nΗλικία 55 ετών έχοντας χρόνο ασφάλισης στο Ταμείο 5 έτη\nΑνεξαρτήτως ηλικίας έχοντας χρόνο ασφάλισης στο Ταμείο 20 έτη\nΕπίσης Ανεξαρτήτως ηλικίας σε περίπτωση αποστρατείας, έχοντας χρόνο παραμονής στο Ταμείο τουλάχιστον ένα (1) έτος",
-  },
-  {
-    question:
-      "Τι προβλέπεται στην περίπτωση που υποβάλλω αίτηση διαγραφής αλλά δεν έχω κάποια από τις τέσσερις προϋποθέσεις που θέτει το καταστατικό για να λάβω τα χρήματα της Ατομικής μου Μερίδας;",
-    answer:
-      "Διαγράφεστε χωρίς τη λήψη της Ατομικής Μερίδας,\nαπό τη μισθοδοσία που διακόπτεται η κράτηση των εισφορών θεωρείστε Ανενεργό Μέλος,\nη ατομική σας μερίδα συμμετέχει στις επενδύσεις του Ταμείου και επανέρχεστε με νεώτερη αίτηση διαγραφής προκειμένου\nνα λάβετε την ατομική σας μερίδα μόλις γίνεται 50 χρονών.\nΓια το διάστημα που είστε ανενεργό μέλος δεν έχετε κάλυψη από τον κλάδο αλληλεγγύης.",
-  },
-
-  {
-    question:
-      "Πότε μπορώ να ζητήσω είτε ο ίδιος, είτε τα πρόσωπα που έχω ορίσει ως δικαιούχους εφάπαξ βοήθημα από τον κλάδο αλληλεγγύης (για θάνατο, Μ.Ο.Α. ή νοσηλεία);",
-    answer:
-      "Με τη συμπλήρωση δύο (2) ετών από την εγγραφή στην περίπτωση θανά-του ή Μόνιμης Ολικής Αναπηρίας (Μ.Ο.Α.) και ενός (1) έτους για νοσηλεία σε νοσοκομεία ή κλινικές (για περιπτώσεις όμως μετά την από την 8η ημέρα νοσηλείας).",
-  },
-
-  {
-    question: "Ποιο είναι το ποσό της μηνιαίας εισφοράς;",
-    answer:
-      "Το ποσό της μηνιαίας εισφοράς που καταβάλουν τα μέλη του Ταμείου, δεν μπορεί να είναι μικρότερο από 30 € και μεγαλύτερο από 500 €.",
-  },
-
-  {
-    question: "Έχω δικαίωμα να μεταβάλω το ύψος της μηνιαίας μου εισφοράς;",
-    answer:
-      "Το κάθε μέλος έχει το δικαίωμα να αυξήσει ή να μειώσει το ποσό της μηνιαίας του εισφοράς μια φορά το χρόνο.",
-  },
-];
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Faq = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [expandAll, setExpandAll] = useState(false);
+  const [data, setData] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:1337/api/syxnes-erotiseis"
+      );
+      setData(response.data.data);
+      console.log(response);
+    } catch (err) {
+      console.log("Error", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const handleToggle = (index) => {
     if (expandedIndex === index) {
@@ -69,7 +42,7 @@ const Faq = () => {
 
   return (
     <div className="p-2 sm:p-4 md:p-8 bg-white mt-[-20] flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center text-custom-new-blue">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center text-custom-new-blue pt-16">
         Συχνές Ερωτήσεις
       </h1>
       <button
@@ -89,22 +62,26 @@ const Faq = () => {
         </svg>
       </button>
 
-      {faqData.map((item, index) => (
-        <div className="border-2 border-gray-300 rounded-lg mb-4" key={index}>
-          <button
-            className="w-full text-left cursor-pointer px-4 py-3 flex justify-between items-center border-b-2 border-gray-300"
-            onClick={() => handleToggle(index)}
-            aria-expanded={expandedIndex === index}
-          >
-            <div className="font-semibold text-blue-500">{item.question}</div>
-          </button>
-          {(expandedIndex === index || expandAll) && (
-            <div className="px-4 py-2 bg-gray-200 border-t-2 border-gray-300">
-              {item.answer}
-            </div>
-          )}
-        </div>
-      ))}
+      <div className="w-full max-w-3xl">
+        {data.map((item, index) => (
+          <div className="border-2 border-gray-300 rounded-lg mb-4" key={index}>
+            <button
+              className="w-full text-left cursor-pointer px-4 py-3 flex justify-between items-center border-b-2 border-gray-300"
+              onClick={() => handleToggle(index)}
+              aria-expanded={expandedIndex === index}
+            >
+              <div className="font-semibold text-blue-500">
+                {item.attributes.Question}
+              </div>
+            </button>
+            {(expandedIndex === index || expandAll) && (
+              <div className="px-4 py-2 bg-gray-200 border-t-2 border-gray-300">
+                {item.attributes.Answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

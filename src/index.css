@@ -202,3 +202,43 @@ th:not(:last-child) {
 .main-container {
   padding-top: 70px;
 }
+
+.scroll-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  background-color: #2b6cb0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  font-size: 20px; /* Adjust as needed */
+  font-weight: bold; /* Makes the arrow thicker */
+}
+
+.scroll-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  background-color: #4299e1;
+}
+
+.scroll-button:active {
+  animation: bounce 0.4s;
+}
+
+.scroll-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

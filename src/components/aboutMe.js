@@ -2,7 +2,7 @@ import React from "react";
 
 function AboutMe() {
   return (
-    <div className="mobile-center font-poppins text-xs leading-6 font-normal text-customColor mx-4 sm:mx-auto max-w-[1300px]">
+    <div className="container mx-auto px-4 sm:px-8 max-w-7xl font-poppins text-xs leading-6 font-normal text-customColor">
       <h2
         id="about-me"
         className="text-center sm:text-left pb-0 text-2xl sm:text-3xl leading-tight m-0 mb-4 pt-0 font-semibold text-custom-new-blue"
@@ -24,7 +24,7 @@ function AboutMe() {
       <div className="mt-4 text-center sm:text-left">
         <a
           href="#"
-          className="inline-block text-dark border-2 border-blue-700 text-center px-6 py-2 cursor-pointer align-middle no-underline rounded-full transition-all duration-200 ease-linear text-xs hover:bg-custom-new-blue"
+          className="inline-block text-dark border-2 border-custom-new-blue text-center px-6 py-2 cursor-pointer align-middle no-underline rounded-full transition-all duration-200 ease-linear text-xs hover:bg-custom-new-blue hover:text-white"
         >
           Ιστορικό
         </a>
@@ -50,7 +50,7 @@ function AboutMe() {
       <div className="mt-4 text-center sm:text-left">
         <a
           href="#"
-          className="inline-block text-dark border-2 border-blue-700 text-center px-6 py-2 cursor-pointer align-middle no-underline rounded-full transition-all duration-200 ease-linear text-xs hover:bg-custom-new-blue"
+          className="inline-block text-dark border-2 border-custom-new-blue text-center px-6 py-2 cursor-pointer align-middle no-underline rounded-full transition-all duration-200 ease-linear text-xs hover:bg-custom-new-blue hover:text-white"
         >
           Σκοπός
         </a>

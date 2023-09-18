@@ -75,7 +75,7 @@ const FundFigures = () => (
         </h3>
       </div>
 
-      <div className="flex flex-wrap justify-around">
+      <div className="flex flex-wrap justify-around ml-[-18px]">
         <Fact icon="👥" number="6,661" title="ασφαλισμένοι" />
         <Fact
           icon="💶"

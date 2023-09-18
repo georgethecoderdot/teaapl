@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const ContactForm = () => {
-  const handleSubmit = (e) => {
+  const [contactInfo, setContactInfo] = useState(null);
+
+  useEffect(() => {
+    const fetchContactInfo = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:1337/api/epikoinonia"
+        );
+        console.log("Full API Response:", response);
+        if (response.status === 200) {
+          setContactInfo(response.data.data.attributes);
+        }
+      } catch (error) {
+        console.error("An error occurred while fetching data", error);
+      }
+    };
+
+    fetchContactInfo();
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const name = e.target["your-name"].value;
@@ -25,7 +46,7 @@ const ContactForm = () => {
     >
       <div className="px-5 md:px-20 block">
         <div className="mx-auto max-w-[1300px] clearfix">
-          <h2 className="text-2xl sm:text-3xl pt-5 pb-10 font-semibold text-[#0582ca]">
+          <h2 className="text-2xl sm:text-3xl pt-5 pb-10 font-semibold text-[#0582ca] ml-16 lg:ml-0">
             ΕΠΙΚΟΙΝΩΝΙΑ
           </h2>
           <div className="w-full md:w-1/2 mb-12 float-left relative pr-5 pl-0">
@@ -33,10 +54,10 @@ const ContactForm = () => {
               <iframe
                 width="100%"
                 height="200"
-                frameborder="0"
+                frameBorder="0"
                 scrolling="no"
-                marginheight="0"
-                marginwidth="0"
+                marginHeight="0"
+                marginWidth="0"
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3140.328532647329!2d23.7270193!3d37.9858607!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1bd2fd05feb4d%3A0x4c5c11c46295dfaa!2sVeranzerou%2030%2C%20Athina%20104%2032%2C%20Greece!5e0!3m2!1sen!2sus!4v1628024665966!5m2!1sen!2sus"
               ></iframe>
             </div>
@@ -44,12 +65,16 @@ const ContactForm = () => {
             <address className="text-lg text-[#051923]">
               <strong>ΔΙΕΥΘΥΝΣΗ:</strong>{" "}
               <a href="https://www.google.com/maps/dir//Veranzerou+30+Athina+104+32/@37.9858607,23.7270193,14z/data=!4m5!4m4!1m0!1m2!1m1!1s0x14a1bd2fd05feb4d:0x4c5c11c46295dfaa">
-                Βερανζέρου 30, Αθήνα, 10432
+                {contactInfo ? contactInfo.Address : "Loading..."}
               </a>{" "}
               <br />
-              <strong>E-MAIL:</strong> info@teaapl.gr <br />
+              <strong className="">E-MAIL:</strong>{" "}
+              {contactInfo ? contactInfo.email : "Loading..."} <br />
               <strong>ΤΗΛΕΦΩΝΟ:</strong>{" "}
-              <a href="tel:210-5202638">210-5202638</a> <br />
+              <a href="tel:210-5202638">
+                {contactInfo ? contactInfo.PhoneNumber : "Loading..."}
+              </a>{" "}
+              <br />
             </address>
           </div>
           <div className="text-lg sm:text-xl leading-[30px] sm:leading-[35px] mb-6 w-full md:w-1/2 float-left ml-[-4] md:ml-0 md:pl-5">

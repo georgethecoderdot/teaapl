@@ -1,72 +1,86 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
+const headers = { "Content-Type": "application/json" };
 
 const Eisfores = () => {
+  const [error, setError] = useState(null);
+  const [eisfores, setEisfores] = useState([]);
+  const cards = eisfores.find((item) => item.id === 52)?.attributes;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:1337/api/klasis", {
+          headers: { "Content-Type": "application/json" },
+        });
+        console.log(response);
+
+        const { data } = response.data;
+        setEisfores(data);
+        setError(null);
+      } catch (error) {
+        setError(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (error) {
+    return <div>An error occurred: {error.message}</div>;
+  }
+
+  if (!eisfores.length) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
       <section>
         <h1 className="text-center text-2xl underline font-bold text-custom-new-blue mt-24">
           ΕΙΣΦΟΡΕΣ
         </h1>
-        <body class=" p-4 mt-20 text-1xl">
-          <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-            <div class="flex-1 p-4 rounded-lg shadow-md border border-blue-400">
-              <p class="text-left text-gray-700 ">
-                Κάθε μέλος υποχρεούται να καταβάλλει στο Ταμείο την εισφορά για
-                κάθε ημερολογιακό μήνα. Το ποσό της μηνιαίας εισφοράς δεν μπορεί
-                να είναι κατώτερο από 30€ ούτε ανώτερο από 500€.
-              </p>
-            </div>
-            <div class="flex-1 p-4 rounded-lg shadow-md border border-blue-400">
-              <p class="text-left text-gray-700">
-                Κάθε μέλος επιλέγει το ποσό της μηνιαίας εισφοράς που καταβάλλει
-                στο Ταμείο μεταξύ του ως άνω κατώτατου και ανώτατου ποσού
-                μηνιαίας εισφοράς.
-              </p>
-            </div>
-            <div class="flex-1 p-4 rounded-lg shadow-md border border-blue-400">
-              <p class="text-left text-gray-700">
-                Το δικαίωμα επιλογής του ποσού της εισφοράς ασκείται με έγγραφη
-                δήλωση του μέλους που υποβάλλεται στο Διοικητικό Συμβούλιο του
-                Ταμείου μαζί με την αίτηση εγγραφής του σε αυτό.
-              </p>
-            </div>
-          </div>
-          <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-4">
-            <div class="flex-1 p-4 rounded-lg shadow-md border border-blue-400">
-              <p class="text-left text-gray-700">
-                Κάθε μέλος έχει το δικαίωμα να μεταβάλλει το ύψος της μηνιαίας
-                εισφοράς που καταβάλλει στο Ταμείο, υπό τον περιορισμό του
-                ισχύοντος κατώτατου και ανώτατου ποσού εισφορών.{" "}
-                <span className="text-blue-500 hover:text-blue-700 underline">
-                  <a
-                    href="https://www.teaapl.gr/images/pdf/aitisi_metavolis_posou_miniaias_eisforas.pdf"
-                    target="_blank"
-                  >
-                    <i class="fa-solid fa-circle-down"></i>Κατεβάστε εδώ το
-                    σχετικό έντυπο.
-                  </a>
-                </span>
-              </p>
-            </div>
-            <div class="flex-1 p-4 rounded-lg shadow-md border border-blue-400">
-              <p class="text-left text-gray-700">
-                Το δικαίωμα μεταβολής του ύψους της εισφοράς ασκείται μια φορά
-                ανά ημερολογιακό έτος με έγγραφη δήλωση του μέλους, η οποία
-                υποβάλλεται στο Διοικητικό Συμβούλιο του Ταμείου έως την 30η
-                Οκτωβρίου. Η μεταβολή ισχύει από την 1η Ιανουαρίου του επόμενου
-                έτους.
-              </p>
-            </div>
-            <div class="flex-1 p-4 rounded-lg shadow-md border border-blue-400">
-              <p class="text-left text-gray-700">
-                Οι εισφορές των μελών κατανέμονται από το Ταμείο στους κλάδους
-                Εφάπαξ και Αλληλεγγύης ανεξάρτητα από το ποσό της μηνιαίας
-                εισφοράς. Στον κλάδο Αλληλεγγύης μεταφέρεται μόνο το ποσό των
-                4,5€, αφού αφαιρεθεί 6% για λειτουργικά έξοδα και με το υπόλοιπο
-                ποσό δημιουργείται ο ατομικός λογαριασμός του μέλους.
-              </p>
-            </div>
-          </div>
+        <body className=" p-4 mt-20 text-1xl">
+          {cards ? (
+            <React.Fragment>
+              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                <div className="flex-1 p-4 rounded-lg shadow-md border border-blue-400">
+                  <p className="text-left text-gray-700">{cards?.firstCard}</p>
+                </div>
+                <div className="flex-1 p-4 rounded-lg shadow-md border border-blue-400">
+                  <p className="text-left text-gray-700">{cards?.secondCard}</p>
+                </div>
+                <div className="flex-1 p-4 rounded-lg shadow-md border border-blue-400">
+                  <p className="text-left text-gray-700">{cards?.thirdCard}</p>
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mt-4">
+                <div className="flex-1 p-4 rounded-lg shadow-md border border-blue-400">
+                  <p className="text-left text-gray-700">
+                    {cards.fourthCard}
+                    <span className="text-blue-500 hover:text-blue-700 underline">
+                      <a
+                        href="https://www.teaapl.gr/images/pdf/aitisi_metavolis_posou_miniaias_eisforas.pdf"
+                        target="_blank"
+                      >
+                        <i className="fa-solid fa-circle-down"></i>Κατεβάστε εδώ
+                        το σχετικό έντυπο.
+                      </a>
+                    </span>
+                  </p>
+                </div>
+                <div className="flex-1 p-4 rounded-lg shadow-md border border-blue-400">
+                  <p className="text-left text-gray-700">{cards?.fifthCard}</p>
+                </div>
+                <div className="flex-1 p-4 rounded-lg shadow-md border border-blue-400">
+                  <p className="text-left text-gray-700">{cards?.sixthCard}</p>
+                </div>
+              </div>
+            </React.Fragment>
+          ) : (
+            <div>No card data available.</div>
+          )}
         </body>
         <main className="table mr-40">
           <section className="text-center bg-gray-300 p-5">
@@ -92,166 +106,18 @@ const Eisfores = () => {
                 </tr>
               </thead>
               <tbody className="w-95 max-h-[calc(89%-0.8rem)] bg-white-50 m-2 rounded-lg overflow-auto border border-gray-300 py-2 px-4 mb-10">
-                <tr>
-                  <td>Α</td>
-                  <td>30,00 €</td>
-                  <td>Αλληλεγγύης</td>
-                  <td>4,50 €</td>
-                  <td>6%</td>
-                  <td>0,27 €</td>
-                  <td>4,23 €</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>Εφάπαξ</td>
-                  <td>25,50 €</td>
-                  <td>6%</td>
-                  <td>1,53 €</td>
-                  <td>&nbsp;</td>
-                  <td>23,97 €</td>
-                </tr>
-                <tr>
-                  <td>Β</td>
-                  <td>40,00 €</td>
-                  <td>Αλληλεγγύης</td>
-                  <td>4,50 €</td>
-                  <td>6%</td>
-                  <td>0,27 €</td>
-                  <td>4,23 €</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>Εφάπαξ</td>
-                  <td>35,50 €</td>
-                  <td>6%</td>
-                  <td>2,13 €</td>
-                  <td>&nbsp;</td>
-                  <td>33,37 €</td>
-                </tr>
-                <tr>
-                  <td>Γ</td>
-                  <td>50,00 €</td>
-                  <td>Αλληλεγγύης</td>
-                  <td>4,50 €</td>
-                  <td>6%</td>
-                  <td>0,27 €</td>
-                  <td>4,23 €</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>Εφάπαξ</td>
-                  <td>45,50 €</td>
-                  <td>6%</td>
-                  <td>2,73 €</td>
-                  <td>&nbsp;</td>
-                  <td>42,77 €</td>
-                </tr>
-                <tr>
-                  <td>Δ</td>
-                  <td>60,00 €</td>
-                  <td>Αλληλεγγύης</td>
-                  <td>4,50 €</td>
-                  <td>6%</td>
-                  <td>0,27 €</td>
-                  <td>4,23 €</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>Εφάπαξ</td>
-                  <td>55,50 €</td>
-                  <td>6%</td>
-                  <td>3,33 €</td>
-                  <td>&nbsp;</td>
-                  <td>52,17 €</td>
-                </tr>
-                <tr>
-                  <td>Ε</td>
-                  <td>70,00 €</td>
-                  <td>Αλληλεγγύης</td>
-                  <td>4,50 €</td>
-                  <td>6%</td>
-                  <td>0,27 €</td>
-                  <td>4,23 €</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>Εφάπαξ</td>
-                  <td>65,50 €</td>
-                  <td>6%</td>
-                  <td>3,93 €</td>
-                  <td>&nbsp;</td>
-                  <td>61,57 €</td>
-                </tr>
-                <tr>
-                  <td>ΣΤ</td>
-                  <td>80,00 €</td>
-                  <td>Αλληλεγγύης</td>
-                  <td>4,50 €</td>
-                  <td>6%</td>
-                  <td>0,27 €</td>
-                  <td>4,23 €</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>Εφάπαξ</td>
-                  <td>75,50 €</td>
-                  <td>6%</td>
-                  <td>4,53 €</td>
-                  <td>&nbsp;</td>
-                  <td>70,97 €</td>
-                </tr>
-                <tr>
-                  <td>Ζ</td>
-                  <td>90,00 €</td>
-                  <td>Αλληλεγγύης</td>
-                  <td>4,50 €</td>
-                  <td>6%</td>
-                  <td>0,27 €</td>
-                  <td>4,23 €</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>Εφάπαξ</td>
-                  <td>85,50 €</td>
-                  <td>6%</td>
-                  <td>5,13 €</td>
-                  <td>&nbsp;</td>
-                  <td>80,37 €</td>
-                </tr>
-                <tr>
-                  <td>Η</td>
-                  <td>100,00 €</td>
-                  <td>Αλληλεγγύης</td>
-                  <td>4,50 €</td>
-                  <td>6%</td>
-                  <td>0,27 €</td>
-                  <td>4,23 €</td>
-                  <td>&nbsp;</td>
-                </tr>
-                <tr>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>Εφάπαξ</td>
-                  <td>95,50 €</td>
-                  <td>6%</td>
-                  <td>5,73 €</td>
-                  <td>&nbsp;</td>
-                  <td>89,77 €</td>
-                </tr>
+                {eisfores.map((item) => (
+                  <tr>
+                    <td>{item.attributes.KLASH}</td>
+                    <td>{item.attributes.PosoEisforas}</td>
+                    <td>{item.attributes.KLADOS}</td>
+                    <td>{item.attributes.POSO}</td>
+                    <td>{item.attributes.PosostoKrathshsIdKefal}</td>
+                    <td>{item.attributes.IdiaKefalaia}</td>
+                    <td>{item.attributes.KladosAllyleghs}</td>
+                    <td>{item.attributes.AtomikhMeridaKlEfapaks}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </section>

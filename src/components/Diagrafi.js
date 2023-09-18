@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
+const headers = { "Content-Type": "application/json" };
 
 const Diagrafh = () => {
+  const [error, setError] = useState(null);
+  const [diagrafi, setDiagrafi] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:1337/api/diagrafi", {
+          headers,
+        });
+        console.log(response);
+        const { data } = response.data; // Extract data array from the response
+        setDiagrafi(data);
+        setError(null);
+      } catch (error) {
+        setError(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (error) {
+    return <div>An error occurred: {error.message}</div>;
+  }
+
+  if (!diagrafi) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
       <section>

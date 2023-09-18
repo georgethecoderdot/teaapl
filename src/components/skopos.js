@@ -1,91 +1,62 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
+import axios from "axios";
+import ReactMarkdown from "react-markdown";
 import "aos/dist/aos.css";
 
 const Skopos = () => {
+  const [skoposData, setSkoposData] = useState(null);
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
+
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:1337/api/skopos-kladoi-asfalisis"
+        );
+        console.log("Full Response:", response);
+
+        setSkoposData(response.data.data.attributes.SkoposKladoiAsfalishs);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
-    <div>
-      <article className="flex justify-center items-center min-h-screen py-5">
-        <section className="bg-white-100 py-32 flex items-center">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1
-              className="text-2xl font-bold text-custom-new-blue mb-6 -mt-16"
-              data-aos="fade-down"
-              data-aos-duration="2500"
-              data-aos-once="true"
-            >
-              ΣΚΟΠΟΣ - ΚΛΑΔΟΙ ΑΣΦΑΛΙΣΗΣ
-            </h1>
-            <p
-              className="text-lg leading-7 text-gray-700"
-              data-aos="fade-down"
-              data-aos-duration="2500"
-              data-aos-once="true"
-            >
-              Το Ταμείο οργανώνεται γύρω από την αρχή της αλληλεγγύης και της
-              κοινωνικής δικαιοσύνης, προσφέροντας δύο κύριους κλάδους
-              επαγγελματικής ασφάλισης:
-            </p>
-            <p
-              className="text-lg leading-10 text-gray-700"
-              data-aos="fade-down"
-              data-aos-duration="2500"
-              data-aos-once="true"
-            >
-              <span>
-                <strong>Κλάδος Εφάπαξ</strong>
-              </span>
-            </p>
-            <p
-              className="text-lg leading-10 text-gray-700"
-              data-aos="fade-down"
-              data-aos-duration="2500"
-              data-aos-once="true"
-            >
-              Αυτός ο κλάδος είναι σχεδιασμένος για να ενισχύσει την οικονομική
-              δικαιοσύνη, χορηγώντας εφάπαξ το ποσό της ατομικής μερίδας του
-              κάθε μέλους, σε μια προσπάθεια για κοινωνική ισότητα.
-            </p>
-            <p
-              className="text-lg leading-10 text-gray-700"
-              data-aos="fade-down"
-              data-aos-duration="2500"
-              data-aos-once="true"
-            >
-              <span>
-                <strong>Κλάδος Αλληλεγγύης</strong>
-              </span>
-            </p>
-            <p
-              className="text-lg leading-10 text-gray-700"
-              data-aos="fade-down"
-              data-aos-duration="2500"
-              data-aos-once="true"
-            >
-              Επικεντρώνεται στην αλληλεγγύη και την κοινοτική προστασία,
-              χορηγώντας βοήθημα για την αντιμετώπιση σοβαρών κινδύνων όπως
-              μόνιμη αναπηρία και θάνατο, με στόχο την διασφάλιση της
-              αξιοπρέπειας και της ευημερίας των μελών και των οικογενειών τους.
-            </p>
-            <p
-              className="text-lg leading-10 text-gray-700"
-              data-aos="fade-down"
-              data-aos-duration="2500"
-              data-aos-once="true"
-            >
-              Για περισσότερες πληροφορίες, επισκεφτείτε τις ενότητες Εισφορές
-              και Παροχές. Είμαστε δεσμευμένοι στην προώθηση της κοινωνικής
-              δικαιοσύνης και της αλληλεγγύης μέσω αυτών των κλάδων, που
-              λειτουργούν με οργανωτική, λογιστική, και οικονομική αυτοτέλεια.
-            </p>
-          </div>
-        </section>
-      </article>
+    <div className="flex flex-col min-h-screen pt-10 md:pt-0">
+      <div className="flex-grow">
+        <article className="flex justify-center py-5">
+          <section className="bg-white py-4 md:py-16 w-full">
+            <div className="px-4 md:px-0 max-w-4xl mx-auto text-center">
+              <h1
+                className="text-xl md:text-2xl font-bold text-custom-new-blue mb-4 md:mb-8 mt-2 md:mt-4"
+                data-aos="fade-down"
+                data-aos-duration="2500"
+                data-aos-once="true"
+              >
+                ΣΚΟΠΟΣ - ΚΛΑΔΟΙ ΑΣΦΑΛΙΣΗΣ
+              </h1>
+              <div
+                className="text-base md:text-lg leading-6 md:leading-7 text-gray-700"
+                data-aos="fade-down"
+                data-aos-duration="2500"
+                data-aos-once="true"
+              >
+                {skoposData ? (
+                  <ReactMarkdown>{skoposData}</ReactMarkdown>
+                ) : (
+                  "Loading..."
+                )}
+              </div>
+            </div>
+          </section>
+        </article>
+      </div>
     </div>
   );
 };

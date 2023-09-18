@@ -16,6 +16,8 @@ function HomePage() {
   useEffect(() => {
     AOS.init({
       duration: 2000,
+      // offset: 0,
+      // anchorPlacement: "top-bottom",
     });
   }, []);
 
@@ -43,22 +45,22 @@ function HomePage() {
     <>
       <FullScreenSlider />
       <div
-        className="py-4 sm:py-16 px-4 sm:px-8 flex flex-col items-center w-full overflow-x-hidden   "
+        className="container mx-auto px-4 sm:px-8 max-w-7xl"
         style={{ backgroundColor: "#FFFFFF" }}
         data-aos="fade-left"
       >
-        <h1 className="text-center text-3xl sm:text-4xl font-bold w-full pb-4 text-custom-new-blue">
+        <h1 className="text-center text-3xl sm:text-4xl font-bold w-full pb-4 text-custom-new-blue ">
           Τελευταίες Ανακοινώσεις
         </h1>
 
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 w-full">
           <div
-            className="w-full sm:w-5/12 p-4 sm:p-9"
-            style={{ backgroundColor: "#253F5B", color: "#4F728E" }}
+            className="w-full rounded-t-lg rounded-b-lg sm:w-5/12 p-4 sm:p-9"
+            style={{ backgroundColor: "#035280", color: "#4F728E" }}
           >
             <a href="#!">
               <img
-                className="rounded-t-lg w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500 ease-in-out hover:filter hover:brightness-90"
+                className="rounded-t-lg rounded-b-lg w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500 ease-in-out hover:filter hover:brightness-90"
                 src={closed}
                 alt=""
               />
@@ -76,20 +78,20 @@ function HomePage() {
               </p>
               <button
                 type="button"
-                className="inline-block rounded px-6 py-2.5 mt-4 text-xs font-medium uppercase leading-normal"
-                style={{ backgroundColor: "#ffffff", color: "#000000" }}
+                className="inline-block rounded px-6 py-2.5 mt-4 text-xs font-medium  leading-normal lg:ml-20 ml-12 hover:bg-custom-new-blue"
+                style={{ color: "#ffffff" }}
               >
-                Συνεχιστε την αναγνωση
+                Διαβάστε περισσότερα
               </button>
             </div>
           </div>
           <div
-            className="w-full sm:w-5/12 p-4 sm:p-9"
-            style={{ backgroundColor: "#253F5B", color: "#4F728E" }}
+            className="w-full rounded-t-lg rounded-b-lg sm:w-5/12 p-4 sm:p-9"
+            style={{ backgroundColor: "#035280", color: "#4F728E" }}
           >
             <a href="#!">
               <img
-                className="rounded-t-lg w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500 ease-in-out hover:filter hover:brightness-90"
+                className="rounded-t-lg rounded-b-lg w-full h-64 object-cover transform hover:scale-105 transition-transform duration-500 ease-in-out hover:filter hover:brightness-90"
                 src={red}
                 alt=""
               />
@@ -107,18 +109,18 @@ function HomePage() {
               </p>
               <button
                 type="button"
-                className="inline-block rounded px-6 py-2.5 mt-4 text-xs font-medium uppercase leading-normal"
-                style={{ backgroundColor: "#ffffff", color: "#000000" }}
+                className="inline-block rounded px-6 py-2.5 mt-4 text-xs font-medium  leading-normal lg:ml-20 ml-12 hover:bg-custom-new-blue"
+                style={{ color: "#ffffff" }}
               >
-                Συνεχιστε την αναγνωση
+                Διαβάστε περισσότερα
               </button>
             </div>
           </div>
         </div>
-        <div className="mt-4 ml-40 w-full">
+        <div className="mt-4 ml-20 lg:ml-20  w-full">
           <a
             href="#"
-            className="announcement-btn inline-block text-center px-10 py-3 cursor-pointer align-middle no-underline rounded-full transition-all duration-200 ease-linear text-sm border-2 border-blue-700  hover:bg-custom-new-blue"
+            className="announcement-btn inline-block text-center px-10 py-3 cursor-pointer align-middle no-underline rounded-full transition-all duration-200 ease-linear text-sm border-2 border-custom-new-blue  hover:bg-custom-new-blue hover:text-white"
           >
             Ανακοινώσεις
           </a>
@@ -128,13 +130,13 @@ function HomePage() {
           className="py-4 sm:py-8 md:py-12 lg:py-16 px-4 sm:px-8 w-full lg:ml-32 flex flex-col items-start"
           data-aos="fade-right"
         >
-          <div className="mt-8 lg:mt-16">
+          <div className="mt-8 lg:mt-16 ml-[-16px] lg:ml-[-96px]">
             <AboutMe />
           </div>
-          <div className="mt-4 lg:mt-8">
+          <div className="mt-4 lg:mt-8 lg:ml-[-16px]">
             <Timeline />
           </div>
-          <div data-aos="flip-up">
+          <div className="lg:ml-[-72px]" data-aos="flip-up">
             <FundFigures />
           </div>
           <div className="mt-16 sm:mt-16 md:-ml-16 w-full" data-aos="fade-down">
@@ -168,10 +170,10 @@ function HomePage() {
       {showScrollButton && (
         <button
           onClick={scrollTop}
-          className="fixed bottom-10 right-10 z-50 bg-blue-500 text-white w-12 h-12 rounded-full focus:outline-none hover:bg-blue-600 hidden sm:block"
+          className="scroll-button fixed bottom-10 right-10 z-50 bg-blue-500 text-white w-12 h-12 rounded-full focus:outline-none hover:bg-blue-600 hidden sm:block"
           title="Back to top"
         >
-          ↑
+          <i class="fa fa-chevron-up cursor-pointer"></i>
         </button>
       )}
     </>

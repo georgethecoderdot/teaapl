@@ -37,12 +37,12 @@ function FullScreenSlider() {
   const slider = useRef(null);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     arrows: false,
     adaptiveHeight: true,
@@ -50,7 +50,7 @@ function FullScreenSlider() {
 
   return (
     <div
-      className="h-screen w-full relative"
+      className="h-screen w-full relative mb-12"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >

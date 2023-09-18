@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 function BudgetsSection() {
   const [isFired, setIsFired] = useState(false);
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (isFired) {
       const fileContent = "..."; // Replace with your file content
       const blob = new Blob([fileContent], {
@@ -26,7 +26,16 @@ function BudgetsSection() {
       link.remove();
       setIsFired(false);
     }
-  }, [isFired]);
+  }, [isFired]); */
+
+  const handleDownload = () => {
+    const downloadLink = document.createElement("a");
+    downloadLink.href = process.env.PUBLIC_URL + "/proypologismos.pdf";
+    downloadLink.download = "proypologismos.pdf";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  };
 
   return (
     <div className="h-screen flex items-center justify-center py-2 md:py-12 bg-gray-100">
@@ -71,8 +80,11 @@ function BudgetsSection() {
               Αναφορά προϋπολογισμών 2017
             </h2>
             <a
-              onClick={() => setIsFired(true)}
-              className="inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white text-xs md:text-sm uppercase tracking-wider px-4 md:px-6 py-2 rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:translate-y-1 hover:shadow-xl"
+              onClick={() => {
+                setIsFired(true);
+                handleDownload();
+              }}
+              className="cursor-pointer inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white text-xs md:text-sm uppercase tracking-wider px-4 md:px-6 py-2 rounded-lg shadow-lg transform transition-all duration-200 hover:scale-105 hover:translate-y-1 hover:shadow-xl"
             >
               Download
             </a>

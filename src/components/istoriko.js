@@ -1,67 +1,55 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
+import axios from "axios";
+import ReactMarkdown from "react-markdown";
 import "aos/dist/aos.css";
 
 const Tameio = () => {
+  const [textData, setTextData] = useState(null);
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
+
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:1337/api/istoriko");
+        console.log("Full Response:", response);
+
+        setTextData(response.data.data.attributes.istoriko);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
-    <div>
+    <div className="pt-20 md:pt-0">
+      {" "}
+      {/* Padding applied only for mobile screens */}
       <article>
-        <section className="bg-white-100 py-32 flex items-center">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2
-              className="text-2xl font-bold text-custom-new-blue  mb-6 -mt-8"
+        <section className="bg-white-100 py-6 md:py-32 flex items-center">
+          <div className="max-w-xs md:max-w-4xl mx-auto text-center">
+            <h1
+              className="text-xl md:text-2xl font-bold text-custom-new-blue mb-4 md:mb-6 -mt-4 md:-mt-8"
               data-aos="fade-down"
               data-aos-duration="2500"
             >
               ΙΣΤΟΡΙΚΟ
-            </h2>
-            <p
-              className="text-lg leading-7 text-gray-700"
+            </h1>
+            <div
+              className="text-base md:text-lg leading-7 text-gray-700"
               data-aos="fade-down"
               data-aos-duration="2500"
             >
-              Ξεκίνησε το 1994 ως μια απάντηση στην ανάγκη για αλληλεγγύη και
-              κοινωνική δικαιοσύνη μεταξύ των μελών της Διεθνούς Ένωσης
-              Αστυνομικών. Το ταμείο δημιουργήθηκε με σκοπό την κοινωνική
-              ενίσχυση και την προστασία των εργαζομένων και των οικογενειών
-              τους σε περιπτώσεις έκτακτης ανάγκης, όπως θάνατος, αναπηρία ή
-              μακροχρόνια νοσηλεία.
-            </p>
-            <p
-              className="text-lg leading-7 text-gray-700"
-              data-aos="fade-down"
-              data-aos-duration="2500"
-            >
-              Από την αρχή, είχαμε την πίστη ότι οι εργαζόμενοι πρέπει να έχουν
-              το δικαίωμα να εκφράζουν τις απόψεις τους και να συμμετέχουν
-              ενεργά στη διαχείριση του ταμείου, προωθώντας έτσι την δημοκρατική
-              συμμετοχή.
-            </p>
-            <p
-              className="text-lg leading-7 text-gray-700"
-              data-aos="fade-down"
-              data-aos-duration="2500"
-            >
-              Με την ενταξή του στο καθεστώς των επαγγελματικών ταμείων το 2009,
-              το ταμείο αποκτά μια πιο οργανωμένη και δημοκρατική δομή,
-              επιτρέποντας στα μέλη του να συμβάλλουν ακόμα περισσότερο στην
-              κοινωνική δικαιοσύνη και την αλληλεγγύη.
-            </p>
-            <p
-              className="text-lg leading-7 text-gray-700"
-              data-aos="fade-down"
-              data-aos-duration="2500"
-            >
-              Στην πορεία του, το ταμείο έχει ανοίξει τις πόρτες του σε
-              πυροσβέστες, Λιμενικούς, και πολιτικό προσωπικό, αναγνωρίζοντας
-              ότι η αλληλεγγύη και η κοινωνική προστασία είναι δικαιώματα που
-              πρέπει να επεκταθούν σε όλους τους εργαζόμενους.
-            </p>
+              {textData ? (
+                <ReactMarkdown>{textData}</ReactMarkdown>
+              ) : (
+                "Loading..."
+              )}
+            </div>
           </div>
         </section>
       </article>
