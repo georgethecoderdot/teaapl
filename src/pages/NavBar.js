@@ -90,7 +90,7 @@ function Navbar() {
               </div>
 
               {isMobileMenuOpen ? (
-                <div className="fixed top-0 right-0 w-64 h-full bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 text-white z-20 transform translate-x-0 transition-transform duration-300 ease-in-out shadow-2xl overflow-y-auto">
+                <div className="fixed top-0 right-0 w-64 h-full bg-gradient-to-r from-custom-new-blue via-custom-new-blue-light to-custom-new-blue-dark text-white z-20 transform translate-x-0 transition-transform duration-300 ease-in-out shadow-2xl overflow-y-auto">
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="absolute top-4 left-4 text-4xl text-white transition duration-300 ease-in-out hover:text-gray-400"
@@ -390,11 +390,11 @@ function Navbar() {
                   </div>
                 </div>
               ) : (
-                <div className="fixed top-0 right-0 w-64 h-full bg-blue-800 text-white z-20 transform translate-x-full transition-transform duration-300 shadow-2xl">
+                <div className="fixed top-0 right-0 w-64 h-full bg-custom-new-blue text-white z-20 transform translate-x-full transition-transform duration-300 shadow-2xl">
                   {/* This empty div is just to hold the space when the menu is not visible */}
                 </div>
               )}
-              <div className="hidden md:flex items-center ml-4">
+              <div className="hidden md:flex items-center ml-4 ">
                 <div className="hidden md:flex items-center ml-4">
                   <Link
                     to="/teaapl"

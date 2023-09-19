@@ -117,7 +117,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-        <div className="mt-4 text-center w-full">
+        <div className="mt-4 text-center lg:text-left lg:ml-20 w-full">
           <a
             href="#"
             className="announcement-btn inline-block text-center px-10 py-3 cursor-pointer align-middle no-underline rounded-full transition-all duration-200 ease-linear text-sm border-2 border-custom-new-blue  hover:bg-custom-new-blue hover:text-white"
