@@ -42,7 +42,7 @@ function HomePage() {
   };
 
   return (
-    <>
+    <div className="overflow-hidden">
       <FullScreenSlider />
       <div
         className="container mx-auto px-4 sm:px-8 max-w-7xl"
@@ -117,7 +117,7 @@ function HomePage() {
             </div>
           </div>
         </div>
-        <div className="mt-4 ml-20 lg:ml-20  w-full">
+        <div className="mt-4 text-center w-full">
           <a
             href="#"
             className="announcement-btn inline-block text-center px-10 py-3 cursor-pointer align-middle no-underline rounded-full transition-all duration-200 ease-linear text-sm border-2 border-custom-new-blue  hover:bg-custom-new-blue hover:text-white"
@@ -176,7 +176,7 @@ function HomePage() {
           <i class="fa fa-chevron-up cursor-pointer"></i>
         </button>
       )}
-    </>
+    </div>
   );
 }
 
