@@ -98,13 +98,13 @@ function Navbar() {
                     &times;
                   </button>
                   <div className="pt-16 pr-6 pl-10 pb-4 space-y-3 text-lg font-semibold">
-                    <a
-                      href="/"
+                    <Link
+                      to="/teaapl"
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="block py-2 px-6 hover:bg-blue-500 rounded-lg"
                     >
                       ΑΡΧΙΚΗ
-                    </a>
+                    </Link>
                     <div className="relative">
                       <button
                         onClick={() =>
@@ -134,54 +134,54 @@ function Navbar() {
                       </button>
                       {isSubMenuTameioOpen && (
                         <div className="pl-4 space-y-2">
-                          <a
-                            href="#"
+                          <Link
+                            to="/teaapl/istoriko"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΙΣΤΟΡΙΚΟ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/skopos"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΣΚΟΠΟΣ-ΚΛΑΔΟΙ ΑΣΦΑΛΙΣΗΣ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/Dioikisi"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΔΙΟΙΚΗΣΗ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/katastatiko"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΚΑΤΑΣΤΑΤΙΚΟ
-                          </a>
+                          </Link>
                           <a
-                            href="#"
+                            href="https://www.teaapl.gr/images/pdf/%CE%95%CE%A3%CE%A9%CE%A4%CE%95%CE%A1%CE%99%CE%9A%CE%9F%CE%A3%20%CE%9A%CE%91%CE%9D%CE%9F%CE%9D%CE%99%CE%A3%CE%9C%CE%9F%CE%A3.PDF"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΕΣΩΤΕΡΙΚΟΣ ΚΑΝΟΝΙΣΜΟΣ
                           </a>
-                          <a
-                            href="#"
+                          <Link
+                            to="/teaapl/Enimerotika"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΕΝΗΜΕΡΩΤΙΚΑ ΦΥΛΛΑΔΙΑ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/Nomothesia"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΝΟΜΟΘΕΣΙΑ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/Antiprosopoi"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΑΝΤΙΠΡΟΣΩΠΟΙ ΑΝΑ ΝΟΜΟ
-                          </a>
+                          </Link>
                         </div>
                       )}
                     </div>
@@ -214,24 +214,24 @@ function Navbar() {
                       </button>
                       {isSubMenuSymmetoxiOpen && (
                         <div className="pl-4 space-y-2">
-                          <a
-                            href="#"
+                          <Link
+                            to="/teaapl/pleonektimata"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΠΛΕΟΝΕΚΤΗΜΑΤΑ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/eggrafi"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΕΓΓΡΑΦΗ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/Eisfores"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΕΙΣΦΟΡΕΣ
-                          </a>
+                          </Link>
                           <a
                             href="#"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
