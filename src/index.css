@@ -25,15 +25,15 @@ body {
 }
 
 .table {
-  margin-left: 250px;
   margin-top: 80px;
   overflow: visible;
+  display: flex;
+  justify-content: center;
 }
 
 .table_header {
-  text-align: center;
-  /* background-color: #d5d1defe; */
   padding: 20px;
+  text-align: center;
 }
 
 .table_body::-webkit-scrollbar-thumb {

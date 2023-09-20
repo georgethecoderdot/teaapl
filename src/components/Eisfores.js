@@ -7,6 +7,20 @@ const Eisfores = () => {
   const [error, setError] = useState(null);
   const [eisfores, setEisfores] = useState([]);
   const cards = eisfores.find((item) => item.id === 52)?.attributes;
+  const [view, setView] = useState("table");
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,6 +48,10 @@ const Eisfores = () => {
   if (!eisfores.length) {
     return <div>Loading...</div>;
   }
+
+  const toggleView = () => {
+    setView((prevView) => (prevView === "table" ? "cards" : "table"));
+  };
 
   return (
     <div>
@@ -82,44 +100,105 @@ const Eisfores = () => {
             <div>No card data available.</div>
           )}
         </body>
-        <main className="table mr-40">
-          <section className="text-center bg-gray-300 p-5">
-            <h1 className="text-2xl text-gray-700 border-4 border-black p-4 m-0">
+        <main className="table">
+          <section className="table_header mt-[-50px]">
+            <h1 className="text-2xl font-bold text-custom-new-blue p-4 m-0">
               ΕΝΔΕΙΚΤΙΚΟΣ ΠΙΝΑΚΑΣ ΚΛΑΣΕΩΣ ΕΙΣΦΟΡΩΝ
             </h1>
-            <hr class="my-6 border-t-2 border-gray-700"></hr>
-            <h1>Ανάλυση Εισφοράς σε Αποθ/κά και Ι.Κ.</h1>
-            <hr class="my-6 border-t-2 border-gray-700"></hr>
+            {windowWidth > 768 && (
+              <div className="text-right p-4">
+                <button
+                  onClick={toggleView}
+                  className="ml-60 flex items-center"
+                >
+                  {view === "table" ? (
+                    <i className="fas fa-th-large text-blue-500"></i>
+                  ) : (
+                    <i className="fas fa-list text-green-500"></i>
+                  )}
+                </button>
+              </div>
+            )}
           </section>
           <section className="table_body">
-            <table className="w-full border-collapse ">
-              <thead className="sticky top-16 z-10 bg-gray-200">
-                <tr>
-                  <th class=" p-5">Κλάση </th>
-                  <th class=" p-5 ">Ποσό Εισφοράς</th>
-                  <th class=" p-5">Κλάδος </th>
-                  <th class=" p-5">Ποσό</th>
-                  <th class=" p-5">Ποσοστό Κράτησης Ιδ. Κεφαλ.</th>
-                  <th class=" p-5">Ίδια Κεφάλαια </th>
-                  <th class=" p-5">Κλάδος Αλληλεγγύης</th>
-                  <th class=" p-5">Ατομική Μερίδα Κλ. Εφάπαξ</th>
-                </tr>
-              </thead>
-              <tbody className="w-95 max-h-[calc(89%-0.8rem)] bg-white-50 m-2 rounded-lg overflow-auto border border-gray-300 py-2 px-4 mb-10">
-                {eisfores.map((item) => (
-                  <tr>
-                    <td>{item.attributes.KLASH}</td>
-                    <td>{item.attributes.PosoEisforas}</td>
-                    <td>{item.attributes.KLADOS}</td>
-                    <td>{item.attributes.POSO}</td>
-                    <td>{item.attributes.PosostoKrathshsIdKefal}</td>
-                    <td>{item.attributes.IdiaKefalaia}</td>
-                    <td>{item.attributes.KladosAllyleghs}</td>
-                    <td>{item.attributes.AtomikhMeridaKlEfapaks}</td>
-                  </tr>
+            {view === "table" && windowWidth > 768 ? (
+              <div>
+                <table className="w-full border-collapse">
+                  <thead className="sticky top-16 z-10 bg-custom-new-blue text-white">
+                    <tr>
+                      <th className="p-5">Κλάση</th>
+                      <th className="p-5">Ποσό Εισφοράς</th>
+                      <th className="p-5">Κλάδος</th>
+                      <th className="p-5">Ποσό</th>
+                      <th className="p-5">Ποσοστό Κράτησης Ιδ. Κεφαλ.</th>
+                      <th className="p-5">Ίδια Κεφάλαια</th>
+                      <th className="p-5">Κλάδος Αλληλεγγύης</th>
+                      <th className="p-5">Ατομική Μερίδα Κλ. Εφάπαξ</th>
+                    </tr>
+                  </thead>
+                  <tbody className="w-95 max-h-[calc(89%-0.8rem)] bg-white-50 m-2 rounded-lg overflow-auto border border-gray-300 py-2 px-4">
+                    {eisfores.map((item, index) => (
+                      <tr key={index}>
+                        <td>{item.attributes.KLASH}</td>
+                        <td>{item.attributes.PosoEisforas}</td>
+                        <td>{item.attributes.KLADOS}</td>
+                        <td>{item.attributes.POSO}</td>
+                        <td>{item.attributes.PosostoKrathshsIdKefal}</td>
+                        <td>{item.attributes.IdiaKefalaia}</td>
+                        <td>{item.attributes.KladosAllyleghs}</td>
+                        <td>{item.attributes.AtomikhMeridaKlEfapaks}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:max-w-5xl xl:mx-auto gap-6 p-4">
+                {eisfores.map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-white shadow-lg rounded-lg overflow-hidden p-4 border border-gray-200"
+                  >
+                    {/* Card details */}
+                    <h3 className="text-xl font-bold mb-2 text-custom-new-blue">
+                      {item.attributes.KLASH}
+                    </h3>
+                    <p className="mb-2">
+                      <span className="font-bold">Ποσό Εισφοράς:</span>{" "}
+                      {item.attributes.PosoEisforas}
+                    </p>
+                    <p className="mb-2">
+                      <span className="font-bold">Κλάδος:</span>{" "}
+                      {item.attributes.KLADOS}
+                    </p>
+                    <p className="mb-2">
+                      <span className="font-bold">Ποσό:</span>{" "}
+                      {item.attributes.POSO}
+                    </p>
+                    <p className="mb-2">
+                      <span className="font-bold">
+                        Ποσοστό Κράτησης Ιδ. Κεφαλ.:
+                      </span>{" "}
+                      {item.attributes.PosostoKrathshsIdKefal}
+                    </p>
+                    <p className="mb-2">
+                      <span className="font-bold">Ίδια Κεφάλαια:</span>{" "}
+                      {item.attributes.IdiaKefalaia}
+                    </p>
+                    <p className="mb-2">
+                      <span className="font-bold">Κλάδος Αλληλεγγύης:</span>{" "}
+                      {item.attributes.KladosAllyleghs}
+                    </p>
+                    <p className="mb-2">
+                      <span className="font-bold">
+                        Ατομική Μερίδα Κλ. Εφάπαξ:
+                      </span>{" "}
+                      {item.attributes.AtomikhMeridaKlEfapaks}
+                    </p>
+                  </div>
                 ))}
-              </tbody>
-            </table>
+              </div>
+            )}
           </section>
         </main>
       </section>

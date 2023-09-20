@@ -70,11 +70,11 @@ const Antiprosopoi = () => {
         </h1>
         {windowWidth > 768 && (
           <div className="text-right p-4">
-            <button onClick={toggleView} className="mr-2 flex items-center">
+            <button onClick={toggleView} className="ml-40 flex items-center">
               {view === "table" ? (
-                <i className="fas fa-th-large text-blue-500 mr-2"></i>
+                <i className="fas fa-th-large text-blue-500"></i>
               ) : (
-                <i className="fas fa-list text-green-500 mr-2"></i>
+                <i className="fas fa-list text-green-500 "></i>
               )}
             </button>
           </div>

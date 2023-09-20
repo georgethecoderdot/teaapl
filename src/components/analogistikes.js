@@ -45,7 +45,11 @@ const Analogistikes = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={PDF} alt="PDF" />
+                    <img
+                      src={PDF}
+                      alt="PDF"
+                      className="w-24 h-8 sm:w-auto sm:h-auto"
+                    />
                   </a>
                 </td>
               </tr>

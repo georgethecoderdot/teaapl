@@ -30,6 +30,7 @@ function Navbar() {
   const [showSubMenuEnimerosi, setShowSubMenuEnimerosi] = useState(false);
   const [isSubMenuEnimerosiOpen, setIsSubMenuEnimerosiOpen] = useState(false);
   const [isSubMenuOikonomikaOpen, setIsSubMenuOikonomikaOpen] = useState(false);
+  const [isNavBarOpen, setIsNavBarOpen] = useState(false);
 
   const [showScrollButton, setShowScrollButton] = useState(false);
 
@@ -48,6 +49,15 @@ function Navbar() {
 
     return () => window.removeEventListener("scroll", checkScrollTop);
   }, [showScrollButton]);
+
+  const handleLinkClick = () => {
+    setIsNavBarOpen(false);
+  };
+
+  const handleSubLinkClick = () => {
+    setIsNavBarOpen(false);
+    setShowSubMenuTameio(false);
+  };
 
   return (
     <>
@@ -68,19 +78,19 @@ function Navbar() {
                 >
                   {/* Updated Hamburger Animation */}
                   <span
-                    className={`block absolute w-10 h-1 bg-blue-800 transition-transform transform duration-500 ease-in-out rounded-md ${
+                    className={`block absolute w-10 h-1 bg-custom-new-blue transition-transform transform duration-500 ease-in-out rounded-md ${
                       isMobileMenuOpen
                         ? "rotate-45 translate-y-1.5"
                         : "translate-y-1"
                     }`}
                   ></span>
                   <span
-                    className={`block absolute w-10 h-1 bg-blue-800 transition-opacity duration-500 ease-in-out rounded-md ${
+                    className={`block absolute w-10 h-1 bg-custom-new-blue transition-opacity duration-500 ease-in-out rounded-md ${
                       isMobileMenuOpen ? "opacity-0" : "translate-y-4"
                     }`}
                   ></span>
                   <span
-                    className={`block absolute w-10 h-1 bg-blue-800 transition-transform transform duration-500 ease-in-out rounded-md ${
+                    className={`block absolute w-10 h-1 bg-custom-new-blue transition-transform transform duration-500 ease-in-out rounded-md ${
                       isMobileMenuOpen
                         ? "-rotate-45 -translate-y-1.5"
                         : "translate-y-7"
@@ -232,18 +242,18 @@ function Navbar() {
                           >
                             ΕΙΣΦΟΡΕΣ
                           </Link>
-                          <a
-                            href="#"
+                          <Link
+                            to="/teaapl/paroxes"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΠΑΡΟΧΕΣ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/Diagrafi"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΔΙΑΓΡΑΦΗ
-                          </a>
+                          </Link>
                         </div>
                       )}
                     </div>
@@ -277,48 +287,48 @@ function Navbar() {
                       </button>
                       {isSubMenuOikonomikaOpen && (
                         <div className="pl-4 space-y-2">
-                          <a
-                            href="#"
+                          <Link
+                            to="/teaapl/ependiseis"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΕΠΕΝΔΥΣΕΙΣ
-                          </a>
+                          </Link>
                           <a
-                            href="#"
+                            href="https://www.alphatrust.gr/funds/tea-astunomikon-purosveston-limenikon-mikto-institutional-share-class/"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΑΜΟΙΒΑΙΟ ΚΕΦΑΛΑΙΟ
                           </a>
                           <a
-                            href="#"
+                            href="https://www.teaapl.gr/images/pdf/%CE%95%CE%A0%CE%95%CE%9D%CE%94%CE%A5%CE%A4%CE%99%CE%9A%CE%9F%CE%A3%20%CE%9A%CE%91%CE%9D%CE%9F%CE%9D%CE%99%CE%A3%CE%9C%CE%9F%CE%A3.PDF"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΚΑΝΟΝΙΣΜΟΣ ΕΠΕΝΔΥΣΕΩΝ
                           </a>
-                          <a
-                            href="#"
+                          <Link
+                            to="/teaapl/ependitiki"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΕΠΕΝΔΥΤΙΚΗ ΕΠΙΤΡΟΠΗ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/isologismoi"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΙΣΟΛΟΓΙΣΜΟΙ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/analogistikes"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΑΝΑΛΟΓΙΣΤΙΚΕΣ ΜΕΛΕΤΕΣ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/budget"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΠΡΟΥΠΟΛΟΓΙΣΜΟΙ
-                          </a>
+                          </Link>
                         </div>
                       )}
                     </div>
@@ -352,30 +362,30 @@ function Navbar() {
                       </button>
                       {isSubMenuEnimerosiOpen && (
                         <div className="pl-4 space-y-2">
-                          <a
-                            href="#"
+                          <Link
+                            to="/teaapl/anakoinoseis/1"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΑΝΑΚΟΙΝΩΣΕΙΣ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/Genikes"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΓΕΝΙΚΕΣ ΣΥΝΕΛΕΥΣΕΙΣ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/FAQs"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ
-                          </a>
-                          <a
-                            href="#"
+                          </Link>
+                          <Link
+                            to="/teaapl/ergo"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΤΟ ΕΡΓΟ ΤΟΥ ΤΑΜΕΙΟΥ
-                          </a>
+                          </Link>
                         </div>
                       )}
                     </div>
@@ -394,309 +404,317 @@ function Navbar() {
                   {/* This empty div is just to hold the space when the menu is not visible */}
                 </div>
               )}
-              <div className="hidden md:flex items-center ml-4 ">
-                <div className="hidden md:flex items-center ml-4">
-                  <Link
-                    to="/teaapl"
-                    className="mx-3 py-2 text-sm font-medium text-gray-700 uppercase hover:text-blue-500"
-                  >
-                    ΑΡΧΙΚΗ
-                  </Link>
-                  {/* Start of Submenu */}
-                  <div
-                    onMouseEnter={() => setShowSubMenuTameio(true)}
-                    onMouseLeave={() => setShowSubMenuTameio(false)}
-                    className="relative group mx-3 py-2"
-                  >
-                    <a
-                      href="#"
-                      className="flex items-center text-sm font-medium text-gray-700 uppercase hover:text-blue-500"
+              <div
+                className={`hidden md:flex items-center ml-4 ${
+                  isNavBarOpen ? "open" : "closed"
+                }`}
+              >
+                <div className="hidden md:flex items-center ml-4 ">
+                  <div className="hidden md:flex items-center ml-4">
+                    <Link
+                      to="/teaapl"
+                      className="mx-3 py-2 text-sm font-medium text-gray-700 uppercase hover:text-blue-500"
+                      onClick={handleLinkClick}
                     >
-                      ΤΟ ΤΑΜΕΙΟ
-                      {/* SVG Arrow indicating submenu */}
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={`ml-2 transform transition-transform duration-300 ${
-                          showSubMenuTameio ? "rotate-180" : ""
-                        }`}
+                      ΑΡΧΙΚΗ
+                    </Link>
+                    {/* Start of Submenu */}
+                    <div
+                      onMouseEnter={() => setShowSubMenuTameio(true)}
+                      onMouseLeave={() => setShowSubMenuTameio(false)}
+                      className="relative group mx-3 py-2"
+                    >
+                      <a
+                        href="#"
+                        className="flex items-center text-sm font-medium text-gray-700 uppercase hover:text-blue-500"
                       >
-                        <path
-                          d="M2 4L6 8L10 4"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </a>
-                    {showSubMenuTameio && (
-                      <div className="absolute left-0 mt-2 w-56 opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white shadow-lg z-10">
-                        {/* Submenu items */}
-                        <Link
-                          to="/teaapl/istoriko"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                        ΤΟ ΤΑΜΕΙΟ
+                        {/* SVG Arrow indicating submenu */}
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`ml-2 transform transition-transform duration-300 ${
+                            showSubMenuTameio ? "rotate-180" : ""
+                          }`}
                         >
-                          ΙΣΤΟΡΙΚΟ
-                        </Link>
-                        <Link
-                          to="/teaapl/skopos"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΣΚΟΠΟΣ-ΚΛΑΔΟΙ ΑΣΦΑΛΙΣΗΣ
-                        </Link>
-                        <Link
-                          to="/teaapl/Dioikisi"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΔΙΟΙΚΗΣΗ
-                        </Link>
-                        <Link
-                          to="/teaapl/katastatiko"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΚΑΤΑΣΤΑΤΙΚΟ
-                        </Link>
-                        <a
-                          href="https://www.teaapl.gr/images/pdf/%CE%95%CE%A3%CE%A9%CE%A4%CE%95%CE%A1%CE%99%CE%9A%CE%9F%CE%A3%20%CE%9A%CE%91%CE%9D%CE%9F%CE%9D%CE%99%CE%A3%CE%9C%CE%9F%CE%A3.PDF"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΕΣΩΤΕΡΙΚΟΣ ΚΑΝΟΝΙΣΜΟΣ
-                        </a>
-                        <Link
-                          to="/teaapl/Enimerotika"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΕΝΗΜΕΡΩΤΙΚΑ ΦΥΛΛΑΔΙΑ
-                        </Link>
-                        <Link
-                          to="/teaapl/Nomothesia"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΝΟΜΟΘΕΣΙΑ
-                        </Link>
-                        <Link
-                          to="/teaapl/Antiprosopoi"
-                          className="block px-4 py-2 text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΑΝΤΙΠΡΟΣΩΠΟΙ ΑΝΑ ΝΟΜΟ
-                        </Link>
-                      </div>
-                    )}
-                  </div>
+                          <path
+                            d="M2 4L6 8L10 4"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </a>
+                      {showSubMenuTameio && (
+                        <div className="absolute left-0 mt-2 w-56 opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white shadow-lg z-10">
+                          {/* Submenu items */}
+                          <Link
+                            to="/teaapl/istoriko"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                            onClick={handleSubLinkClick}
+                          >
+                            ΙΣΤΟΡΙΚΟ
+                          </Link>
+                          <Link
+                            to="/teaapl/skopos"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΣΚΟΠΟΣ-ΚΛΑΔΟΙ ΑΣΦΑΛΙΣΗΣ
+                          </Link>
+                          <Link
+                            to="/teaapl/Dioikisi"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΔΙΟΙΚΗΣΗ
+                          </Link>
+                          <Link
+                            to="/teaapl/katastatiko"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΚΑΤΑΣΤΑΤΙΚΟ
+                          </Link>
+                          <a
+                            href="https://www.teaapl.gr/images/pdf/%CE%95%CE%A3%CE%A9%CE%A4%CE%95%CE%A1%CE%99%CE%9A%CE%9F%CE%A3%20%CE%9A%CE%91%CE%9D%CE%9F%CE%9D%CE%99%CE%A3%CE%9C%CE%9F%CE%A3.PDF"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΕΣΩΤΕΡΙΚΟΣ ΚΑΝΟΝΙΣΜΟΣ
+                          </a>
+                          <Link
+                            to="/teaapl/Enimerotika"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΕΝΗΜΕΡΩΤΙΚΑ ΦΥΛΛΑΔΙΑ
+                          </Link>
+                          <Link
+                            to="/teaapl/Nomothesia"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΝΟΜΟΘΕΣΙΑ
+                          </Link>
+                          <Link
+                            to="/teaapl/Antiprosopoi"
+                            className="block px-4 py-2 text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΑΝΤΙΠΡΟΣΩΠΟΙ ΑΝΑ ΝΟΜΟ
+                          </Link>
+                        </div>
+                      )}
+                    </div>
 
-                  <div
-                    onMouseEnter={() => setShowSubMenuSymmetoxi(true)}
-                    onMouseLeave={() => setShowSubMenuSymmetoxi(false)}
-                    className="relative group mx-3 py-2"
-                  >
-                    <a
-                      href="#"
-                      className="flex items-center text-sm font-medium text-gray-700 uppercase hover:text-blue-500"
+                    <div
+                      onMouseEnter={() => setShowSubMenuSymmetoxi(true)}
+                      onMouseLeave={() => setShowSubMenuSymmetoxi(false)}
+                      className="relative group mx-3 py-2"
                     >
-                      ΣΥΜΜΕΤΟΧΗ
-                      {/* SVG Arrow indicating submenu */}
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={`ml-2 transform transition-transform duration-300 ${
-                          showSubMenuSymmetoxi ? "rotate-180" : ""
-                        }`}
+                      <a
+                        href="#"
+                        className="flex items-center text-sm font-medium text-gray-700 uppercase hover:text-blue-500"
                       >
-                        <path
-                          d="M2 4L6 8L10 4"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </a>
-                    {showSubMenuSymmetoxi && (
-                      <div className="absolute left-0 mt-2 w-56 opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white shadow-lg z-10">
-                        {/* Submenu items */}
-                        <Link
-                          to="/teaapl/pleonektimata"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                        ΣΥΜΜΕΤΟΧΗ
+                        {/* SVG Arrow indicating submenu */}
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`ml-2 transform transition-transform duration-300 ${
+                            showSubMenuSymmetoxi ? "rotate-180" : ""
+                          }`}
                         >
-                          ΠΛΕΟΝΕΚΤΗΜΑΤΑ
-                        </Link>
-                        <Link
-                          to="/teaapl/eggrafi"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΕΓΓΡΑΦΗ
-                        </Link>
-                        <Link
-                          to="/teaapl/Eisfores"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΕΙΣΦΟΡΕΣ
-                        </Link>
-                        <Link
-                          to="/teaapl/paroxes"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΠΑΡΟΧΕΣ
-                        </Link>
-                        <Link
-                          to="/teaapl/Diagrafi"
-                          className="block px-4 py-2 text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΔΙΑΓΡΑΦΗ
-                        </Link>
-                      </div>
-                    )}
-                  </div>
-                  <div
-                    onMouseEnter={() => setShowSubMenuOikonomika(true)}
-                    onMouseLeave={() => setShowSubMenuOikonomika(false)}
-                    className="relative group mx-3 py-2"
-                  >
-                    <a
-                      href="#"
-                      className="flex items-center text-sm font-medium text-gray-700 uppercase hover:text-blue-500"
+                          <path
+                            d="M2 4L6 8L10 4"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </a>
+                      {showSubMenuSymmetoxi && (
+                        <div className="absolute left-0 mt-2 w-56 opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white shadow-lg z-10">
+                          {/* Submenu items */}
+                          <Link
+                            to="/teaapl/pleonektimata"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΠΛΕΟΝΕΚΤΗΜΑΤΑ
+                          </Link>
+                          <Link
+                            to="/teaapl/eggrafi"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΕΓΓΡΑΦΗ
+                          </Link>
+                          <Link
+                            to="/teaapl/Eisfores"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΕΙΣΦΟΡΕΣ
+                          </Link>
+                          <Link
+                            to="/teaapl/paroxes"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΠΑΡΟΧΕΣ
+                          </Link>
+                          <Link
+                            to="/teaapl/Diagrafi"
+                            className="block px-4 py-2 text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΔΙΑΓΡΑΦΗ
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                    <div
+                      onMouseEnter={() => setShowSubMenuOikonomika(true)}
+                      onMouseLeave={() => setShowSubMenuOikonomika(false)}
+                      className="relative group mx-3 py-2"
                     >
-                      ΟΙΚΟΝΟΜΙΚΑ ΣΤΟΙΧΕΙΑ
-                      {/* SVG Arrow indicating submenu */}
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={`ml-2 transform transition-transform duration-300 ${
-                          showSubMenuOikonomika ? "rotate-180" : ""
-                        }`}
+                      <a
+                        href="#"
+                        className="flex items-center text-sm font-medium text-gray-700 uppercase hover:text-blue-500"
                       >
-                        <path
-                          d="M2 4L6 8L10 4"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </a>
-                    {showSubMenuOikonomika && (
-                      <div className="absolute left-0 mt-2 w-56 opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white shadow-lg z-10">
-                        <Link
-                          to="/teaapl/ependiseis"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                        ΟΙΚΟΝΟΜΙΚΑ ΣΤΟΙΧΕΙΑ
+                        {/* SVG Arrow indicating submenu */}
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`ml-2 transform transition-transform duration-300 ${
+                            showSubMenuOikonomika ? "rotate-180" : ""
+                          }`}
                         >
-                          ΕΠΕΝΔΥΣΕΙΣ
-                        </Link>
-                        <a
-                          href="https://www.alphatrust.gr/funds/tea-astunomikon-purosveston-limenikon-mikto-institutional-share-class/"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΑΜΟΙΒΑΙΟ ΚΕΦΑΛΑΙΟ
-                        </a>
-                        <a
-                          href="https://www.teaapl.gr/images/pdf/%CE%95%CE%A0%CE%95%CE%9D%CE%94%CE%A5%CE%A4%CE%99%CE%9A%CE%9F%CE%A3%20%CE%9A%CE%91%CE%9D%CE%9F%CE%9D%CE%99%CE%A3%CE%9C%CE%9F%CE%A3.PDF"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΚΑΝΟΝΙΣΜΟΣ ΕΠΕΝΔΥΣΕΩΝ
-                        </a>
-                        <Link
-                          to="/teaapl/ependitiki"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΕΠΕΝΔΥΤΙΚΗ ΕΠΙΤΡΟΠΗ
-                        </Link>
-                        <Link
-                          to="/teaapl/isologismoi"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΙΣΟΛΟΓΙΣΜΟΙ
-                        </Link>
-                        <Link
-                          to="/teaapl/analogistikes"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΑΝΑΛΟΓΙΣΤΙΚΕΣ ΜΕΛΕΤΕΣ
-                        </Link>
-                        <Link
-                          to="/teaapl/budget"
-                          className="block px-4 py-2 text-xs font-light
+                          <path
+                            d="M2 4L6 8L10 4"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </a>
+                      {showSubMenuOikonomika && (
+                        <div className="absolute left-0 mt-2 w-56 opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white shadow-lg z-10">
+                          <Link
+                            to="/teaapl/ependiseis"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΕΠΕΝΔΥΣΕΙΣ
+                          </Link>
+                          <a
+                            href="https://www.alphatrust.gr/funds/tea-astunomikon-purosveston-limenikon-mikto-institutional-share-class/"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΑΜΟΙΒΑΙΟ ΚΕΦΑΛΑΙΟ
+                          </a>
+                          <a
+                            href="https://www.teaapl.gr/images/pdf/%CE%95%CE%A0%CE%95%CE%9D%CE%94%CE%A5%CE%A4%CE%99%CE%9A%CE%9F%CE%A3%20%CE%9A%CE%91%CE%9D%CE%9F%CE%9D%CE%99%CE%A3%CE%9C%CE%9F%CE%A3.PDF"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΚΑΝΟΝΙΣΜΟΣ ΕΠΕΝΔΥΣΕΩΝ
+                          </a>
+                          <Link
+                            to="/teaapl/ependitiki"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΕΠΕΝΔΥΤΙΚΗ ΕΠΙΤΡΟΠΗ
+                          </Link>
+                          <Link
+                            to="/teaapl/isologismoi"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΙΣΟΛΟΓΙΣΜΟΙ
+                          </Link>
+                          <Link
+                            to="/teaapl/analogistikes"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΑΝΑΛΟΓΙΣΤΙΚΕΣ ΜΕΛΕΤΕΣ
+                          </Link>
+                          <Link
+                            to="/teaapl/budget"
+                            className="block px-4 py-2 text-xs font-light
                           text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΠΡΟΥΠΟΛΟΓΙΣΜΟΙ
-                        </Link>
-                      </div>
-                    )}
-                  </div>
-                  <div
-                    onMouseEnter={() => setShowSubMenuEnimerosi(true)}
-                    onMouseLeave={() => setShowSubMenuEnimerosi(false)}
-                    className="relative group mx-3 py-2"
-                  >
-                    <a
-                      href="#"
-                      className="flex items-center text-sm font-medium text-gray-700 uppercase hover:text-blue-500"
+                          >
+                            ΠΡΟΥΠΟΛΟΓΙΣΜΟΙ
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                    <div
+                      onMouseEnter={() => setShowSubMenuEnimerosi(true)}
+                      onMouseLeave={() => setShowSubMenuEnimerosi(false)}
+                      className="relative group mx-3 py-2"
                     >
-                      ΕΝΗΜΕΡΩΣΗ
-                      {/* SVG Arrow indicating submenu */}
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className={`ml-2 transform transition-transform duration-300 ${
-                          showSubMenuEnimerosi ? "rotate-180" : ""
-                        }`}
+                      <a
+                        href="#"
+                        className="flex items-center text-sm font-medium text-gray-700 uppercase hover:text-blue-500"
                       >
-                        <path
-                          d="M2 4L6 8L10 4"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                        ΕΝΗΜΕΡΩΣΗ
+                        {/* SVG Arrow indicating submenu */}
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`ml-2 transform transition-transform duration-300 ${
+                            showSubMenuEnimerosi ? "rotate-180" : ""
+                          }`}
+                        >
+                          <path
+                            d="M2 4L6 8L10 4"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </a>
+                      {showSubMenuEnimerosi && (
+                        <div className="absolute left-0 mt-2 w-56 opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white shadow-lg z-10">
+                          <Link
+                            to="/teaapl/anakoinoseis/1"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΑΝΑΚΟΙΝΩΣΕΙΣ
+                          </Link>
+                          <Link
+                            to="/teaapl/Genikes"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΓΕΝΙΚΕΣ ΣΥΝΕΛΕΥΣΕΙΣ
+                          </Link>
+                          <Link
+                            to="/teaapl/FAQs"
+                            className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ
+                          </Link>
+                          <Link
+                            to="/teaapl/ergo"
+                            className="block px-4 py-2 text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
+                          >
+                            ΤΟ ΕΡΓΟ ΤΟΥ ΤΑΜΕΙΟΥ
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                    <a
+                      href="#communicationForm"
+                      className="mx-3 py-2 text-sm font-medium text-gray-700 uppercase hover:text-blue-500"
+                    >
+                      ΕΠΙΚΟΙΝΩΝΙΑ
                     </a>
-                    {showSubMenuEnimerosi && (
-                      <div className="absolute left-0 mt-2 w-56 opacity-0 transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 bg-white shadow-lg z-10">
-                        <Link
-                          to="/teaapl/anakoinoseis/1"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΑΝΑΚΟΙΝΩΣΕΙΣ
-                        </Link>
-                        <Link
-                          to="/teaapl/Genikes"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΓΕΝΙΚΕΣ ΣΥΝΕΛΕΥΣΕΙΣ
-                        </Link>
-                        <Link
-                          to="/teaapl/FAQs"
-                          className="block px-4 py-2 border-b text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ
-                        </Link>
-                        <Link
-                          to="/teaapl/ergo"
-                          className="block px-4 py-2 text-xs font-light text-gray-700 hover:text-blue-500 hover:bg-gray-100"
-                        >
-                          ΤΟ ΕΡΓΟ ΤΟΥ ΤΑΜΕΙΟΥ
-                        </Link>
-                      </div>
-                    )}
                   </div>
-                  <a
-                    href="#communicationForm"
-                    className="mx-3 py-2 text-sm font-medium text-gray-700 uppercase hover:text-blue-500"
-                  >
-                    ΕΠΙΚΟΙΝΩΝΙΑ
-                  </a>
                 </div>
               </div>
               <div className="hidden md:flex items-center ml-4">
