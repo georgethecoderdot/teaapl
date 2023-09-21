@@ -2,13 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const Member = ({ id, fullName, pos }) => {
+const MemberCard = ({ id, fullName, pos }) => {
   return (
-    <tr className="hover:bg-custom-new-blue hover:text-white">
-      <td>{`${id}.`}</td>
-      <td>{fullName}</td>
-      <td>{pos}</td>
-    </tr>
+    <div className="border rounded-lg p-6 mb-6 shadow-md hover:bg-custom-new-blue hover:text-white transition-all duration-300 h-48 w-80 flex flex-col justify-center items-center">
+      <h2 className="text-xl font-semibold mb-2">{`${id}. ${fullName}`}</h2>
+      <p className="text-center">{pos}</p>
+    </div>
   );
 };
 
@@ -34,28 +33,19 @@ const Ependytiki = () => {
   return (
     <div>
       <section>
-        <h1 className=" text-center text-2xl underline font-bold text-custom-new-blue mt-24 ">
+        <h1 className="text-center text-2xl underline font-bold text-custom-new-blue mt-24">
           ΕΠΕΝΔΥΤΙΚΗ ΕΠΙΤΡΟΠΗ
         </h1>
-        <div className="flex flex-col items-center">
-          <table className="mb-40 mt-20">
-            <thead className="bg-gray-200">
-              <th className="p-5"></th>
-              <th className="p-5">Ονοματεπώνυμο</th>
-              <th className="p-5">Θέση</th>
-            </thead>
-            <tbody className=" border border-gray-300">
-              {data.map((elem, index) => {
-                return (
-                  <Member
-                    id={index + 1}
-                    fullName={elem.attributes.Fullname}
-                    pos={elem.attributes.Position}
-                  />
-                );
-              })}
-            </tbody>
-          </table>
+        <div className="flex flex-col items-center mt-20 mb-96">
+          {data.map((elem, index) => {
+            return (
+              <MemberCard
+                id={index + 1}
+                fullName={elem.attributes.Fullname}
+                pos={elem.attributes.Position}
+              />
+            );
+          })}
         </div>
       </section>
     </div>
