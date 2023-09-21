@@ -57,6 +57,7 @@ function Navbar() {
   const handleSubLinkClick = () => {
     setIsNavBarOpen(false);
     setShowSubMenuTameio(false);
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -146,24 +147,28 @@ function Navbar() {
                         <div className="pl-4 space-y-2">
                           <Link
                             to="/teaapl/istoriko"
+                            onClick={handleSubLinkClick}
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΙΣΤΟΡΙΚΟ
                           </Link>
                           <Link
                             to="/teaapl/skopos"
+                            onClick={handleSubLinkClick}
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΣΚΟΠΟΣ-ΚΛΑΔΟΙ ΑΣΦΑΛΙΣΗΣ
                           </Link>
                           <Link
                             to="/teaapl/Dioikisi"
+                            onClick={handleSubLinkClick}
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΔΙΟΙΚΗΣΗ
                           </Link>
                           <Link
                             to="/teaapl/katastatiko"
+                            onClick={handleSubLinkClick}
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
                           >
                             ΚΑΤΑΣΤΑΤΙΚΟ
@@ -177,18 +182,21 @@ function Navbar() {
                           <Link
                             to="/teaapl/Enimerotika"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΕΝΗΜΕΡΩΤΙΚΑ ΦΥΛΛΑΔΙΑ
                           </Link>
                           <Link
                             to="/teaapl/Nomothesia"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΝΟΜΟΘΕΣΙΑ
                           </Link>
                           <Link
                             to="/teaapl/Antiprosopoi"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΑΝΤΙΠΡΟΣΩΠΟΙ ΑΝΑ ΝΟΜΟ
                           </Link>
@@ -227,30 +235,35 @@ function Navbar() {
                           <Link
                             to="/teaapl/pleonektimata"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΠΛΕΟΝΕΚΤΗΜΑΤΑ
                           </Link>
                           <Link
                             to="/teaapl/eggrafi"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΕΓΓΡΑΦΗ
                           </Link>
                           <Link
                             to="/teaapl/Eisfores"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΕΙΣΦΟΡΕΣ
                           </Link>
                           <Link
                             to="/teaapl/paroxes"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΠΑΡΟΧΕΣ
                           </Link>
                           <Link
                             to="/teaapl/Diagrafi"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΔΙΑΓΡΑΦΗ
                           </Link>
@@ -290,6 +303,7 @@ function Navbar() {
                           <Link
                             to="/teaapl/ependiseis"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΕΠΕΝΔΥΣΕΙΣ
                           </Link>
@@ -308,24 +322,28 @@ function Navbar() {
                           <Link
                             to="/teaapl/ependitiki"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΕΠΕΝΔΥΤΙΚΗ ΕΠΙΤΡΟΠΗ
                           </Link>
                           <Link
                             to="/teaapl/isologismoi"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΙΣΟΛΟΓΙΣΜΟΙ
                           </Link>
                           <Link
                             to="/teaapl/analogistikes"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΑΝΑΛΟΓΙΣΤΙΚΕΣ ΜΕΛΕΤΕΣ
                           </Link>
                           <Link
                             to="/teaapl/budget"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΠΡΟΥΠΟΛΟΓΙΣΜΟΙ
                           </Link>
@@ -365,24 +383,28 @@ function Navbar() {
                           <Link
                             to="/teaapl/anakoinoseis/1"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΑΝΑΚΟΙΝΩΣΕΙΣ
                           </Link>
                           <Link
                             to="/teaapl/Genikes"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΓΕΝΙΚΕΣ ΣΥΝΕΛΕΥΣΕΙΣ
                           </Link>
                           <Link
                             to="/teaapl/FAQs"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΣΥΧΝΕΣ ΕΡΩΤΗΣΕΙΣ
                           </Link>
                           <Link
                             to="/teaapl/ergo"
                             className="block py-2 px-6 rounded-lg hover:bg-blue-500"
+                            onClick={handleSubLinkClick}
                           >
                             ΤΟ ΕΡΓΟ ΤΟΥ ΤΑΜΕΙΟΥ
                           </Link>

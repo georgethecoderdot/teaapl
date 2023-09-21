@@ -23,7 +23,7 @@ const Eggrafh = () => {
       <h1 className="text-center text-2xl underline font-bold text-custom-new-blue mt-24">
         ΕΓΓΡΑΦΗ
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-14 ml-5 mr-5">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-6 mt-14 ml-5 mr-5">
         {Array.isArray(data) &&
           data.map((item, index) => (
             <React.Fragment key={index}>
