@@ -73,7 +73,7 @@ const Diagrafh = () => {
               Αλληλεγγύης.
             </p>
           </div>
-          <div className="mb-6 p-4  ml-4 mr-4 rounded-lg shadow-md border border-blue-400 mb-20">
+          <div className=" p-4  ml-4 mr-4 rounded-lg shadow-md border border-blue-400 mb-40">
             <p className="text-left text-xl text-gray-700 mb-2">
               Η διαγραφή από το Ταμείο επέρχεται στις ανωτέρω περιπτώσεις από
               την ημερομηνία έκδοσης της απόφασης του Διοικητικού Συμβουλίου του
