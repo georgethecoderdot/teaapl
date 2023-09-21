@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/teaapl/static/css/main.bfe73b8d.css",
-    "main.js": "/teaapl/static/js/main.0494ec0b.js",
+    "main.css": "/teaapl/static/css/main.a9f78f27.css",
+    "main.js": "/teaapl/static/js/main.f4aac178.js",
     "static/js/787.94f13d48.chunk.js": "/teaapl/static/js/787.94f13d48.chunk.js",
     "static/media/redMark.jpg": "/teaapl/static/media/redMark.309d36e697b8f94beeb5.jpg",
     "static/media/concept-save-money.jpg": "/teaapl/static/media/concept-save-money.c11d19e80a2b5f4f87f0.jpg",
@@ -20,12 +20,12 @@
     "static/media/slick.ttf": "/teaapl/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "index.html": "/teaapl/index.html",
     "static/media/slick.woff": "/teaapl/static/media/slick.295183786cd8a1389865.woff",
-    "main.bfe73b8d.css.map": "/teaapl/static/css/main.bfe73b8d.css.map",
-    "main.0494ec0b.js.map": "/teaapl/static/js/main.0494ec0b.js.map",
+    "main.a9f78f27.css.map": "/teaapl/static/css/main.a9f78f27.css.map",
+    "main.f4aac178.js.map": "/teaapl/static/js/main.f4aac178.js.map",
     "787.94f13d48.chunk.js.map": "/teaapl/static/js/787.94f13d48.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bfe73b8d.css",
-    "static/js/main.0494ec0b.js"
+    "static/css/main.a9f78f27.css",
+    "static/js/main.f4aac178.js"
   ]
 }
