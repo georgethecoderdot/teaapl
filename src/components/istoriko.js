@@ -31,7 +31,7 @@ const Tameio = () => {
       {/* Padding applied only for mobile screens */}
       <article>
         <section className="bg-white-100 py-6 md:py-32 flex items-center">
-          <div className="max-w-xs md:max-w-4xl mx-auto text-center">
+          <div className="max-w-xs md:max-w-3xl mx-auto text-center">
             <h1
               className="text-xl md:text-2xl font-bold text-custom-new-blue mb-4 md:mb-6 -mt-4 md:-mt-8"
               data-aos="fade-down"
